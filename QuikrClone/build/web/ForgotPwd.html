@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script>
+function validateForm() {
+    var x = document.forms["Form"]["username"].value;
+    var y=document.forms["Form"]["Npassword"].value;
+    var z=document.forms["Form"]["Cpassword"].value;
+    if (x == "" && y == "" && z=="") {
+        alert("Please fill username and password!!! don't leave them empty");
+        return false;
+    }
+    else if (x=="" && y=="")
+        {
+            alert("Please fill all!!! don't leave them empty");
+            return false;
+        }
+        else if (x=="" && z=="")
+        {
+            alert("Please fill all!!! don't leave them empty");
+            return false;
+        }
+        else if (y=="" && z=="")
+        {
+            alert("Please fill all!!! don't leave them empty");
+            return false;
+        }
+        else if(x=="")
+        {
+            alert("Please fill username!!! don't leave it empty");
+            return false;
+        }
+        else if(y=="")
+        {
+            alert("Please fill new password!!! don't leave it empty");
+            return false;
+        }
+        else if(z=="")
+        {
+            alert("Please fill confirm password!!! don't leave it empty");
+            return false;
+        }
+        if(y!=z)
+        {
+            alert("New Password as well as Confirm Password should be same!!!");
+            return false;
+        }
+    }
+</script>
+        <title>Forgot Password?</title>
+    </head>
+    <body style="font-family: verdana">
+        <center>
+            <h1>Forgot Password</h1>
+        <form action="ForgotPwdPage" method="post" name="Form" onsubmit="return validateForm()">
+        Username: <input type="text" name="username"><br><br>
+        New Password: <input type="text" name="Npassword"><br><br>
+        Confirm Password: <input type="text" name="Cpassword"><br><br>
+        <input type="submit" value="Change Password">
+        </form>
+            <br>
+            <form action="Login.html" method="post">
+        <input type="submit" value="Cancel">
+        </form>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script>
+function validateForm() {
+    var x = document.forms["LoginForm"]["username"].value;
+    var y=document.forms["LoginForm"]["password"].value;
+    if (x == "" && y == "") {
+        alert("Please fill both username and password!!! don't leave both empty");
+        return false;
+    }
+        if (x=="")
+        {
+            alert("Please fill username!!! don't leave it empty");
+            return false;
+        }
+        if(y=="")
+        {
+            alert("Please fill password!!! don't leave it empty");
+            return false;
+        }
+    }
+</script>
+        <title>Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="font-family:verdana">
+        <center>
+       <h1>Login</h1>
+       <form action="LoginPage" method="post" name="LoginForm" onsubmit="return validateForm()">
+        Username: <input type="text" name="username"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        <input type="submit" name="Login" value="Login"><br>
+        </form>
+       <br>
+       <form action="SecurityQ.html" method="post">
+           <input type="submit" value="Forgot Password?">
+       </form>
+       <form action="SignUp.html" method="post"><br>
+        <input type="submit" name="signUp" value="Register">
+        <h6>*By Signing in you agree to T&C and Privacy Policy</h6>
+        </form>
+        <form action="Welcome.jsp" method="post"><br>
+        <input type="submit" value="Home">
+        </form>
+        </center>
+    </body>
+</html>

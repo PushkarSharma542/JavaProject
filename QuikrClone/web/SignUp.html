@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+ <script>
+function valForm() {
+    var x = document.forms["SignUpForm"]["username"].value;
+    var y=document.forms["SignUpForm"]["password"].value;
+    var z=document.forms["SignUpForm"]["email"].value;
+    if (x == "" && y == "" && z == "" ) {
+        alert("Please fill all!!! don't leave anything empty");
+        return false;
+    }
+    else if(y=="" && x=="")
+        {
+            alert("Please fill username & password!!! don't leave it empty");
+            return false;
+        }
+        else if(y=="" && z=="")
+        {
+            alert("Please fill password & email!!! don't leave it empty");
+            return false;
+        }
+        else if(x=="" && z=="")
+        {
+            alert("Please fill username & email!!! don't leave it empty");
+            return false;
+        }
+    else if (x=="")
+        {
+            alert("Please fill username!!! don't leave it empty");
+            return false;
+        }
+        else if(y=="")
+        {
+            alert("Please fill password!!! don't leave it empty");
+            return false;
+        }
+        else if(z=="")
+        {
+            alert("Please fill email!!! don't leave it empty");
+            return false;
+        }
+    }
+</script>
+<title>Register</title>
+    </head>
+    <body  style="font-family:verdana">
+
+        <center>
+            <h1>Register</h1>
+            <form action="SignUpPage" name="SignUpForm" method="post" onsubmit="return valForm()">
+        Username: <input type="text" name="username"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        Email: <input type="text" name="email"><br><br>
+        <input type="submit" value="Sign Up">
+        </form>
+        </center>
+    </body>
+</html>
+
