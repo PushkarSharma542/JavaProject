@@ -26,13 +26,14 @@ public class SignUpPage extends HttpServlet
             String usern=req.getParameter("username");
             String passw=req.getParameter("password");
             String e_mail=req.getParameter("email");
+            String mobile=req.getParameter("mobileno");
             Class.forName("com.mysql.jdbc.Driver");
             String u="root";
             String p="";
             String url="jdbc:mysql://localhost:3306/userinfo";
             Connection con=DriverManager.getConnection(url,u,p);
             Statement st1=con.createStatement();
-            String query="insert into userdetails values('"+usern+"','"+passw+"','"+e_mail+"')";
+            String query="insert into userdetails values('"+usern+"','"+passw+"','"+e_mail+"','"+mobile+"')";
             int count=st1.executeUpdate(query);
             out.println("Successfully Registered!!! Thanks for your support, Login now using same credentials.");
         }
