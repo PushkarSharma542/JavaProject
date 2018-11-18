@@ -59,7 +59,6 @@ public class LoginPage extends HttpServlet
                 out.println("<html><body><form action='Login.html' method='post'><br><input type='submit' value='Login'>");
                 out.println("</form><form action='SignUp.html' method='post'><input type='submit' value='Register'>");
                 out.println("</form></body></html>");
-                
             } catch (ClassNotFoundException | SQLException ex) {}
         }
 } 

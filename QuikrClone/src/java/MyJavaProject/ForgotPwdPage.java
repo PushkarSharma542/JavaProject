@@ -47,15 +47,14 @@ public class ForgotPwdPage extends HttpServlet {
             Statement s=con.createStatement();
             int count=s.executeUpdate(query);
             flag=0;
-            out.println("password changed!!!");
-            out.println("<html><body><form action='Login.html' method='post'><br><input type='submit' value='Login'>");
-                out.println("</form></body></html>");
         } catch (ClassNotFoundException | SQLException ex) {}
-               if(flag==1)
-               {
-                   out.println("username: "+uname+" not found!!!");
-                   out.println("<html><body><form action='ForgotPwd.html' method='post'><br><input type='submit' value='Try Again'>");
-                out.println("</form></body></html>");
-               }
+        if(flag==1)
+        {
+           res.sendRedirect("ForgotPwd.jsp");
+        }
+        else
+        {
+           res.sendRedirect("Login.jsp");
+        }
     }
 }

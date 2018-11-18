@@ -21,24 +21,33 @@ public class SignUpPage extends HttpServlet
     public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException
     {
         PrintWriter out=res.getWriter();
+        int flag=0;
         try 
         {
             String usern=req.getParameter("username");
             String passw=req.getParameter("password");
             String e_mail=req.getParameter("email");
             String mobile=req.getParameter("mobileno");
+            String ques=req.getParameter("securityQ");
+            String answer=req.getParameter("ans");
             Class.forName("com.mysql.jdbc.Driver");
             String u="root";
             String p="";
             String url="jdbc:mysql://localhost:3306/userinfo";
             Connection con=DriverManager.getConnection(url,u,p);
             Statement st1=con.createStatement();
-            String query="insert into userdetails values('"+usern+"','"+passw+"','"+e_mail+"','"+mobile+"')";
+            String query="insert into userdetails values('"+usern+"','"+passw+"','"+e_mail+"','"+mobile+"','"+ques+"','"+answer+"')";
             int count=st1.executeUpdate(query);
-            out.println("Successfully Registered!!! Thanks for your support, Login now using same credentials.");
+            flag=1;
         }
         catch (ClassNotFoundException | SQLException ex) {}
-        out.println("<html><body><form action='Login.html' method='post'> <br><input type='submit' value='Login Now'>");
-        out.println("</form></body></html>");
+        if(flag==0)
+        {
+            res.sendRedirect("SignUp.jsp");
+        }
+        else
+        {
+            res.sendRedirect("Login.jsp");
+        }
     }
 }

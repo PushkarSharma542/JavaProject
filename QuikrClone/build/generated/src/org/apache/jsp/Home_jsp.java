@@ -11,6 +11,12 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/Header.jsp");
+    _jspx_dependants.add("/Footer.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -30,7 +36,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,7 +47,8 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
+      out.write('\n');
+      out.write('\n');
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -130,8 +137,6 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    background-color:#F39C12; \n");
       out.write("}\n");
       out.write("</style>\n");
-      out.write("\n");
-      out.write("<title>Home</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("    <div>\n");
@@ -141,9 +146,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("    <img src=\"images/Logo.png\"><br>\n");
       out.write("<div class=\"navbar\">\n");
-      out.write("  <a href=\"Home.html\">Home</a>\n");
+      out.write("  <a href=\"Home.jsp\">Home</a>\n");
       out.write("  <a href=\"Welcome.jsp\">My Account</a>\n");
-      out.write("  <a href=\"About.html\">About</a>\n");
+      out.write("  <a href=\"About.jsp\">About</a>\n");
       out.write("  <div class=\"dropdown\">\n");
       out.write("    <button class=\"dropbtn\">Categories \n");
       out.write("      <i class=\"fa fa-caret-down\"></i>\n");
@@ -155,30 +160,31 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("  </div> \n");
       out.write("  <div class=\"bt\">\n");
-      out.write("  <a href=\"Login.html\">Login</a>    \n");
-      out.write("  <a href=\"SignUp.html\">SignUp</a>\n");
+      out.write("  <a href=\"Login.jsp\">Login</a>    \n");
+      out.write("  <a href=\"SignUp.jsp\">SignUp</a>\n");
       out.write("  </div>\n");
       out.write("</div>\n");
       out.write("   <hr color=\"darkslategray\"> \n");
-      out.write("   ");
-
-   if(session.getAttribute("username")==null)
-            {
-                response.sendRedirect("Login.html");
-            }
-     
-      out.write("   \n");
-      out.write("        ");
-
-            out.println("Welcome"+" username");
-        
-      out.write("\n");
-      out.write("        <form action=\"LogoutPage\" method=\"post\">\n");
-      out.write("            <input type=\"submit\" value=\"Logout\" class=\"logout\">\n");
-      out.write("        </form>\n");
       out.write("</body>\n");
       out.write("</html>\n");
       out.write("\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <title>Home</title>\n");
+      out.write("    </head>\n");
+      out.write("<iframe>\n");
+      out.write("</iframe>\n");
+      out.write("</html>\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <hr color=\"darkslategray\">\n");
+      out.write("        <img src=\"images/Logo.png\">\n");
+      out.write("    </body>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

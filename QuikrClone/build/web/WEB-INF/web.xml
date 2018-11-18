@@ -24,6 +24,10 @@
         <servlet-name>ForgotPwdPage</servlet-name>
         <servlet-class>MyJavaProject.ForgotPwdPage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SecurityQPage</servlet-name>
+        <servlet-class>MyJavaProject.SecurityQPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginPage</servlet-name>
         <url-pattern>/LoginPage</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ForgotPwdPage</servlet-name>
         <url-pattern>/ForgotPwdPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecurityQPage</servlet-name>
+        <url-pattern>/SecurityQPage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
