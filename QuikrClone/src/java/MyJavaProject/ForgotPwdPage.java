@@ -14,6 +14,7 @@ import java.sql.Statement;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,7 +33,8 @@ public class ForgotPwdPage extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException
     {
-        String uname=req.getParameter("username");
+        HttpSession session=req.getSession();
+        String uname=(String)session.getAttribute("username");
         String pass=req.getParameter("Npassword");
         //String pass1=req.getParameter("Cpassword");
         PrintWriter out=res.getWriter();

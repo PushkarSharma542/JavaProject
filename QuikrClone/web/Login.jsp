@@ -61,7 +61,7 @@ and open the template in the editor.
     <body style="font-family:verdana">
         <center>
        <h1>Login</h1>
-       <img src="images/theUser.png" alt="User" height="225" width="225">
+       <img src="images/theUser.png" alt="User" height="200" width="200"><br><br>
        <div>
        <form action="LoginPage" method="post"><br>
         <input type="text" name="username" placeholder="Username" class="input" required><br><br>
@@ -75,10 +75,7 @@ and open the template in the editor.
            </div>
        <div>
            <a href="SecurityQ.jsp">Forgot Password?</a><br>
-       <form action="SignUp.jsp" method="post"><br>
-        <input type="submit" name="signUp" value="Register" class="input">
-        <h6>*By Signing in you agree to T&C and Privacy Policy</h6>
-        </form>
+        <h6>*By Signing in you agree to T&C and Privacy Policy</h6>     
            </div>
         </center>
     </body>

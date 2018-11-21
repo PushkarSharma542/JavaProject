@@ -71,55 +71,32 @@
     display: block;
 }
 
-.input1
-{
-    float:right;
-    border: 1px solid darkslategray;
-    background-color: #F9E79F;
-    margin-right: 7px;
-    width: 110px;
-    height:40px;
-    margin-top: 4px;
-    font-family: verdana;
-    border-radius:10px;
-}
-.input2
-{
-    float:right;
-    border: 1px solid darkslategray;
-    background-color: #F9E79F;
-    width: 70px;
-    border-radius:10px;
-    height:40px;
-   margin-right: 5px;
-   margin-top: 4px;
-   font-family: verdana;
-}
-
-.input1:hover , .input2:hover{
-    background-color:lightgoldenrodyellow;
-}
 .postadd{
     border: 2px solid darkslategray;
-    background-color: lightgreen;
+    background-color: #F9E79F;
     margin-right: 10px;
     width: 100px;
     height:40px;
    float: right;
    border-radius:10px;
-   margin-top: 17px;
    font-family: verdana;
 }
 
 .postadd:hover
 {
-    background-color:lightgoldenrodyellow; 
+    background-color:lightgoldenrodyellow;
 }
 .right{
     float: right;
-    margin-right: 10px;
+    
+}
+h4{
+    float: right;
+    margin-right: 8px;
+    margin-top: 28px;
 }
 </style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body style="font-family:verdana">
     <div>
@@ -127,7 +104,8 @@
             if(session.getAttribute("username")==null)
             {
                 out.println("<form action='Login.jsp' method='post' class='right'>");
-                out.println("Welcome, Guest");
+                String u="Guest";
+                pageContext.setAttribute("username",u);
             out.println("<br><input type='submit' value='Login' class='postadd'>");
         out.println("</form>");
             }
@@ -135,16 +113,19 @@
             {
                 out.println("<form action='LogoutPage' method='post' class='right'>");
                 String user=(String)session.getAttribute("username");
-                out.println("Welcome, "+user);
+                String u=(String)session.getAttribute("username");
+                pageContext.setAttribute("username",u);
             out.println("<br><input type='submit' value='Logout' class='postadd'>");
         out.println("</form>");
             }
         %>
     </div>
+    <h4><%out.println("Welcome ");out.print(pageContext.findAttribute("username"));%></h4>
     <img src="images/Logo.png"><br>
+    
 <div class="navbar">
   <a href="Home.jsp">Home</a>
-  <a href="Welcome.jsp">My Profile</a>
+  <a href="MyProfile.jsp">My Profile</a>
   <a href="About.jsp">About</a>
   <div class="dropdown">
     <button class="dropbtn">Categories 
@@ -156,15 +137,19 @@
       <a href="#">Automobiles</a>
     </div>
   </div>
-  <div>
-      <form method="post" action="PostAdd.jsp">
-    <input type="submit" value="Post Free Ad" class="input1">
-      </form>
-      <form method="post" action="SignUp.jsp">
-    <input type="submit" value="SignUp" class="input2">
-      </form>
+  <div class="right">
+      <a href="PostAd.jsp">Post an Ad</a>
+      <a href="SignUp.jsp" >Register&nbsp;
+          <i class="fas fa-user" style="font-size:17px; color: lightcoral;"></i>
+      </a>
   </div>
+        
 </div>
    <hr color="darkslategray"> 
+   <%if(session.getAttribute("username")!=null)
+   {
+       out.println("<img src='images/mycart.png' style='float:right; margin-right:5px'>");
+   }
+   %>
 </body>
 </html>

@@ -24,10 +24,13 @@ public class SignUpPage extends HttpServlet
         int flag=0;
         try 
         {
+            String firstname=req.getParameter("FirstName");
+            String lastname=req.getParameter("LastName");
             String usern=req.getParameter("username");
             String passw=req.getParameter("password");
             String e_mail=req.getParameter("email");
             String mobile=req.getParameter("mobileno");
+            String address=req.getParameter("Address");
             String ques=req.getParameter("securityQ");
             String answer=req.getParameter("ans");
             Class.forName("com.mysql.jdbc.Driver");
@@ -36,7 +39,7 @@ public class SignUpPage extends HttpServlet
             String url="jdbc:mysql://localhost:3306/userinfo";
             Connection con=DriverManager.getConnection(url,u,p);
             Statement st1=con.createStatement();
-            String query="insert into userdetails values('"+usern+"','"+passw+"','"+e_mail+"','"+mobile+"','"+ques+"','"+answer+"')";
+            String query="insert into userdetails values('"+firstname+"','"+lastname+"','"+usern+"','"+passw+"','"+e_mail+"','"+mobile+"','"+address+"','"+ques+"','"+answer+"')";
             int count=st1.executeUpdate(query);
             flag=1;
         }

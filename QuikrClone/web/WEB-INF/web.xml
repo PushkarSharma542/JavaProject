@@ -5,14 +5,6 @@
         <servlet-class>MyJavaProject.LoginPage</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>signUpIndex</servlet-name>
-        <servlet-class>MyJavaProject.signUpIndex</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>signUpPage1</servlet-name>
-        <servlet-class>MyJavaProject.signUpPage1</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>LogoutPage</servlet-name>
         <servlet-class>MyJavaProject.LogoutPage</servlet-class>
     </servlet>
@@ -28,17 +20,13 @@
         <servlet-name>SecurityQPage</servlet-name>
         <servlet-class>MyJavaProject.SecurityQPage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteAccount</servlet-name>
+        <servlet-class>MyJavaProject.DeleteAccount</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginPage</servlet-name>
         <url-pattern>/LoginPage</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>signUpIndex</servlet-name>
-        <url-pattern>/signUpIndex</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>signUpPage1</servlet-name>
-        <url-pattern>/signUpPage1</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogoutPage</servlet-name>
@@ -55,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>SecurityQPage</servlet-name>
         <url-pattern>/SecurityQPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAccount</servlet-name>
+        <url-pattern>/DeleteAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

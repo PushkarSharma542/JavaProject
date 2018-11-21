@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/src/java/MyJavaProject/LogoutPage.java</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/web/Header.jsp</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/web/Welcome.jsp</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/src/java/MyJavaProject/SignUpPage.java</file>
+            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/web/MyProfile.jsp</file>
             <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/web/SecurityQ.jsp</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/src/java/MyJavaProject/ForgotPwdPage.java</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/web/SignUp.jsp</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/src/java/MyJavaProject/SecurityQPage.java</file>
-            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/web/Login.jsp</file>
+            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/src/java/MyJavaProject/DeleteAccount.java</file>
+            <file>file:/C:/Users/PushkarSharma/Documents/NetBeansProjects/MyProject/src/java/MyJavaProject/LoginPage.java</file>
         </group>
     </open-files>
 </project-private>

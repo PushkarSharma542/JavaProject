@@ -74,7 +74,6 @@ if(x!==y)
             <h1>Password Reset</h1>
             <img src="images/passwordReset.png" alt="ForgotPasswordLogo" height="250" width="250">
         <form action="ForgotPwdPage" method="post" name="Form" onsubmit="return validateForm()" >
-            <input type="text" name="username" class="input" placeholder="Username" required><br><br>
         <input type="password" name="Npassword" class="input" placeholder="New Password" required><br><br>
         <input type="password" name="Cpassword" class="input" placeholder="Confirm Password" required><br><br>
         <input type="submit" value="Change Password" class="input">

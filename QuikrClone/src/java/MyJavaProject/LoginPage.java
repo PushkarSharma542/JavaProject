@@ -44,6 +44,7 @@ public class LoginPage extends HttpServlet
                 Connection con=DriverManager.getConnection(url,user,pas);
                 Statement s=con.createStatement();
                 ResultSet r=s.executeQuery(query);
+                int flag=1;
                 while(r.next())
                 {
                     dbuname=r.getString("username");
@@ -51,14 +52,15 @@ public class LoginPage extends HttpServlet
                     HttpSession session=req.getSession();
                     if(dbuname.equals(uname) && dbpass.equals(pass))
                     {    
+                        flag=0;
                         session.setAttribute("username",uname);
-                        res.sendRedirect("Welcome.jsp");
+                        res.sendRedirect("Home.jsp");
                     }
                 }
-                out.println("Your Username or Password is incorrect, Please try again using correct login credentials or Register for free.");
-                out.println("<html><body><form action='Login.html' method='post'><br><input type='submit' value='Login'>");
-                out.println("</form><form action='SignUp.html' method='post'><input type='submit' value='Register'>");
-                out.println("</form></body></html>");
+                if(flag==1)
+                {
+                    res.sendRedirect("Login.jsp");
+                }
             } catch (ClassNotFoundException | SQLException ex) {}
         }
 } 

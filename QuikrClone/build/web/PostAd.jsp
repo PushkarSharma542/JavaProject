@@ -5,6 +5,12 @@
 --%>
 
 <%@include file="Header.jsp"%>
+<% 
+    if(session.getAttribute("username")==null)
+    {
+        response.sendRedirect("Login.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>

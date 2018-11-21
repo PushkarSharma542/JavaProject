@@ -28,6 +28,6 @@ public class LogoutPage extends HttpServlet
         HttpSession session=request.getSession();
         session.removeAttribute("username");     
         session.invalidate();
-        response.sendRedirect("Login.jsp");
+        response.sendRedirect("Home.jsp");
     }
 }

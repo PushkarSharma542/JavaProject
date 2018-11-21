@@ -92,19 +92,36 @@ if (/^\d{10}$/.test(x)) {
     background-color:white;
     color:black;
 }
+.i{
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkslategray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.i[type=text]:focus 
+{
+      background-color: #F9E79F;
+      color: black;
+}
 </style>
 <title>Register</title>
     </head>
     <body style="font-family:verdana" >
         <center>
             <h1>Register</h1>
-            <img src="images/theUser.png" alt="User" height="225" width="225">
+            <img src="images/theUser.png" alt="User" height="200" width="200"><br><br>
             <div>
             <form action="SignUpPage" name="SignUpForm" method="post" onsubmit="return mob()">
+                <input type="text" name="FirstName" placeholder="First Name" class="i" required>&nbsp;
+                <input type="text" name="LastName" placeholder="Last Name" class="i" required><br><br>
                 <input type="text" name="username" placeholder="Username" class="input" required><br><br>
                 <input type="password" name="password" placeholder="Password" class="input" required><br><br>
                 <input type="email" name="email" placeholder="Email" class="input" required><br><br>
                 <input type="text" name="mobileno" placeholder="Mobile No." class="input" required><br><br>
+                <input type="text" name="Address" placeholder="Address" class="input" required><br><br>
                 <select id="securityQ" name="securityQ" required>
                     <option value="" disabled="disabled" selected="selected" class="select">Select security question</option>
                     <option name="ques1" value="ques1" class="select" >In which city you were born</option>
