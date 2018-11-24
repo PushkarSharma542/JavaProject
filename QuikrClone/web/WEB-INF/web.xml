@@ -24,6 +24,10 @@
         <servlet-name>DeleteAccount</servlet-name>
         <servlet-class>MyJavaProject.DeleteAccount</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PostAdPage</servlet-name>
+        <servlet-class>MyJavaProject.PostAdPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginPage</servlet-name>
         <url-pattern>/LoginPage</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>DeleteAccount</servlet-name>
         <url-pattern>/DeleteAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostAdPage</servlet-name>
+        <url-pattern>/PostAdPage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -10,7 +10,7 @@
    <style>
 .navbar {
     overflow: hidden;
-    background-color:darkslategray;
+    background-color:#0B5345;
     font-family: verdana;
     border-radius: 4px;
 }
@@ -22,11 +22,13 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .dropdown {
     float: left;
     overflow: hidden;
+    font-weight: bold;
 }
 
 .dropdown .dropbtn {
@@ -34,21 +36,17 @@
     border: none;
     outline: none;
     color: white;
+    font-weight: bold;
     padding: 14px 16px;
     background-color: inherit;
     font-family: verdana;
     margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-        background-color: #F9E79F;
-        color: black;
-}
-
 .dropdown-content {
     display: none;
     position: fixed;
-    background-color: #F9E79F;
+    background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -64,7 +62,8 @@
 }
 
 .dropdown-content a:hover {
-    background-color: white;
+    background-color: #0B5345;
+    color:white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -72,9 +71,10 @@
 }
 
 .postadd{
-    border: 2px solid darkslategray;
-    background-color: #F9E79F;
+    border: 2px solid #0B5345;
+    background-color: white;
     margin-right: 10px;
+    color: darkgreen;
     width: 100px;
     height:40px;
    float: right;
@@ -84,11 +84,23 @@
 
 .postadd:hover
 {
-    background-color:lightgoldenrodyellow;
+    background-color:#0B5345;
+    color:white;
+    font-weight: bold;
 }
 .right{
     float: right;
-    
+}
+.ads{
+    float:right;
+    background-color:greenyellow;
+    color: #0B5345;
+    text-decoration: none;
+    margin-right: 6px;
+    padding: 8px 15px;
+    margin-top: -15px;
+    border: 1px solid #0B5345;
+    border-radius: 5px;
 }
 h4{
     float: right;
@@ -96,10 +108,10 @@ h4{
     margin-top: 28px;
 }
 </style>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body style="font-family:verdana">
     <div>
+        <a href="Cart.jsp"><img src="images/mycart.png" height="50" width="50" style="float:right; margin-right:5px;margin-left:4px; margin-top:12px"></a>
         <%
             if(session.getAttribute("username")==null)
             {
@@ -120,7 +132,7 @@ h4{
             }
         %>
     </div>
-    <h4><%out.println("Welcome ");out.print(pageContext.findAttribute("username"));%></h4>
+    <h4 style="color: #0B5345"><%out.println("Welcome ");out.print(pageContext.findAttribute("username"));%></h4>
     <img src="images/Logo.png"><br>
     
 <div class="navbar">
@@ -129,7 +141,6 @@ h4{
   <a href="About.jsp">About</a>
   <div class="dropdown">
     <button class="dropbtn">Categories 
-      <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
       <a href="#">Electronics</a>
@@ -138,17 +149,17 @@ h4{
     </div>
   </div>
   <div class="right">
-      <a href="PostAd.jsp">Post an Ad</a>
-      <a href="SignUp.jsp" >Register&nbsp;
-          <i class="fas fa-user" style="font-size:17px; color: lightcoral;"></i>
+      <a href="PostAd.jsp">Post Free Ad</a>
+      <a href="SignUp.jsp" >Register
       </a>
   </div>
-        
 </div>
-   <hr color="darkslategray"> 
+   <hr color="#0B5345"> 
    <%if(session.getAttribute("username")!=null)
    {
-       out.println("<img src='images/mycart.png' style='float:right; margin-right:5px'>");
+        out.println("<form action='MyAds.jsp' method='post' >");
+        out.println("<br><a href='MyAds.jsp' class='ads'>My Ads</a>");
+        out.println("</form>");
    }
    %>
 </body>

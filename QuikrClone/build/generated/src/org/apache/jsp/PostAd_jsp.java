@@ -3,14 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.time.LocalDateTime;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
-public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class PostAd_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,14 +47,8 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
+      out.write('\n');
+      out.write('\n');
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -69,7 +57,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("   <style>\n");
       out.write(".navbar {\n");
       out.write("    overflow: hidden;\n");
-      out.write("    background-color:#0B5345;\n");
+      out.write("    background-color:darkslategray;\n");
       out.write("    font-family: verdana;\n");
       out.write("    border-radius: 4px;\n");
       out.write("}\n");
@@ -81,13 +69,11 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    text-align: center;\n");
       out.write("    padding: 14px 16px;\n");
       out.write("    text-decoration: none;\n");
-      out.write("    font-weight: bold;\n");
       out.write("}\n");
       out.write("\n");
       out.write(".dropdown {\n");
       out.write("    float: left;\n");
       out.write("    overflow: hidden;\n");
-      out.write("    font-weight: bold;\n");
       out.write("}\n");
       out.write("\n");
       out.write(".dropdown .dropbtn {\n");
@@ -95,17 +81,21 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    border: none;\n");
       out.write("    outline: none;\n");
       out.write("    color: white;\n");
-      out.write("    font-weight: bold;\n");
       out.write("    padding: 14px 16px;\n");
       out.write("    background-color: inherit;\n");
       out.write("    font-family: verdana;\n");
       out.write("    margin: 0;\n");
       out.write("}\n");
       out.write("\n");
+      out.write(".navbar a:hover, .dropdown:hover .dropbtn {\n");
+      out.write("        background-color: #F9E79F;\n");
+      out.write("        color: black;\n");
+      out.write("}\n");
+      out.write("\n");
       out.write(".dropdown-content {\n");
       out.write("    display: none;\n");
       out.write("    position: fixed;\n");
-      out.write("    background-color: white;\n");
+      out.write("    background-color: #F9E79F;\n");
       out.write("    min-width: 160px;\n");
       out.write("    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n");
       out.write("    z-index: 1;\n");
@@ -121,8 +111,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\n");
       out.write("\n");
       out.write(".dropdown-content a:hover {\n");
-      out.write("    background-color: #0B5345;\n");
-      out.write("    color:white;\n");
+      out.write("    background-color: white;\n");
       out.write("}\n");
       out.write("\n");
       out.write(".dropdown:hover .dropdown-content {\n");
@@ -130,10 +119,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\n");
       out.write("\n");
       out.write(".postadd{\n");
-      out.write("    border: 2px solid #0B5345;\n");
-      out.write("    background-color: white;\n");
+      out.write("    border: 2px solid darkslategray;\n");
+      out.write("    background-color: #F9E79F;\n");
       out.write("    margin-right: 10px;\n");
-      out.write("    color: darkgreen;\n");
       out.write("    width: 100px;\n");
       out.write("    height:40px;\n");
       out.write("   float: right;\n");
@@ -143,12 +131,11 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write(".postadd:hover\n");
       out.write("{\n");
-      out.write("    background-color:#0B5345;\n");
-      out.write("    color:white;\n");
-      out.write("    font-weight: bold;\n");
+      out.write("    background-color:lightgoldenrodyellow;\n");
       out.write("}\n");
       out.write(".right{\n");
       out.write("    float: right;\n");
+      out.write("    \n");
       out.write("}\n");
       out.write("h4{\n");
       out.write("    float: right;\n");
@@ -182,7 +169,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\n");
       out.write("    </div>\n");
-      out.write("    <h4 style=\"color: #0B5345\">");
+      out.write("    <h4>");
 out.println("Welcome ");out.print(pageContext.findAttribute("username"));
       out.write("</h4>\n");
       out.write("    <img src=\"images/Logo.png\"><br>\n");
@@ -202,14 +189,14 @@ out.println("Welcome ");out.print(pageContext.findAttribute("username"));
       out.write("    </div>\n");
       out.write("  </div>\n");
       out.write("  <div class=\"right\">\n");
-      out.write("      <a href=\"PostAd.jsp\">Post Free Ad</a>\n");
+      out.write("      <a href=\"PostAd.jsp\">Post an Ad</a>\n");
       out.write("      <a href=\"SignUp.jsp\" >Register&nbsp;\n");
-      out.write("          <i class=\"fas fa-user\" style=\"font-size:17px; color: white;\"></i>\n");
+      out.write("          <i class=\"fas fa-user\" style=\"font-size:17px; color: lightcoral;\"></i>\n");
       out.write("      </a>\n");
       out.write("  </div>\n");
       out.write("        \n");
       out.write("</div>\n");
-      out.write("   <hr color=\"#0B5345\"> \n");
+      out.write("   <hr color=\"darkslategray\"> \n");
       out.write("   ");
 if(session.getAttribute("username")!=null)
    {
@@ -219,64 +206,62 @@ if(session.getAttribute("username")!=null)
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");
-      out.write("\n");
-      out.write("<html>\n");
-      out.write("    <title>Home</title>\n");
-      out.write("    <body>\n");
+      out.write('\n');
+ 
+    if(session.getAttribute("username")==null)
+    {
+        response.sendRedirect("Login.jsp");
+    }
 
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","");
-        Statement s=con.createStatement();
-        ResultSet r=s.executeQuery("select * from postad");
-        while(r.next())
-        {
-            System.out.println(LocalDateTime.now());
-            String user=r.getString("sellerName");
-            String cat=r.getString("category");
-            String price=r.getString("price");
-            String desc=r.getString("description");
-            out.print("<html><div><form style='font-family: arial'><table align='left'><tr><td>"+"Seller name : "+user+"</td></tr>");
-            out.print("<tr><td>"+"Item category : "+cat+"</td></tr>");
-            out.print("<tr><td>"+"Price : Rs. "+price+"</td></tr>");
-            out.print("<tr><td>"+"Description : "+desc+"</td></tr>");
-            out.print("<tr><td style=><form action='#buynow' method='post'><input type='submit' style='background-color: yellow; padding: 8px 10px; border:1px solid darkslategray; border-radius: 4px;' value='Buy Now'></form></td></tr></table>");
-            out.print("</form></div></html>");
-        }
-    
       out.write("\n");
-      out.write("    <br><br><br><br><br><br><br><br><br><br><br><br><br>\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Post Free Ad</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body style=\"font-family: verdana\">\n");
+      out.write("        <center>\n");
+      out.write("            <h1>Post Free Ad</h1>\n");
+      out.write("        <div>\n");
+      out.write("            <form action=\"PostAddPage\" method=\"post\">\n");
+      out.write("                <select name=\"AddCategory\" required>\n");
+      out.write("                    <option value=\"\" disabled=\"disabled\" selected=\"selected\" class=\"select\">Select your category</option>\n");
+      out.write("                    <option name=\"electronics\" value=\"electronics\" class=\"select\" >Electronics</option>\n");
+      out.write("                    <option name=\"education\" value=\"education\" class=\"select\">Education</option>\n");
+      out.write("                    <option name=\"automobiles\" value=\"automobiles\" class=\"select\">Automobiles</option>\n");
+      out.write("                    </select>\n");
+      out.write("                <input type=\"number\" name=\"price\" Placeholder=\"Set Price\" required>\n");
+      out.write("            </form> \n");
+      out.write("            </div>\n");
+      out.write("        </center>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
-      out.write("    ");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <style>\n");
+      out.write("            .img{\n");
+      out.write("    float: right;\n");
+      out.write("    margin-top: 10px;\n");
+      out.write("    margin-right: 5px;\n");
+      out.write("}\n");
       out.write("body{\n");
       out.write("    font-family: verdana;\n");
-      out.write("}\n");
-      out.write(".ia{\n");
-      out.write("     margin-left: 2px;\n");
       out.write("}\n");
       out.write("            </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <hr color=\"#0B5345\">\n");
-      out.write("        <img src=\"images/Logo.png\" class=\"ia\"><br>\n");
-      out.write("        <h5 style=\"margin-top: 5px;margin-left: 15px\">710-B, Advant Navis Business Park,<br>\n");
-      out.write("        Sector-142, Noida, Uttar Pradesh - 201305<br>\n");
-      out.write("        feedback@quikr.com\n");
-      out.write("        </h5>\n");
-      out.write("        <center>\n");
+      out.write("        <hr color=\"darkslategray\">\n");
+      out.write("        <img src=\"images/Logo.png\">\n");
       out.write("        <div class=\"img\">\n");
+      out.write("        <i><b>Follow us on :-</b></i><br><br>\n");
       out.write("        <a href=\"http://www.instagram.com\"><img src=\"images/insta.png\" height=\"50\" width=\"50\" alt=\"Instagram\"></a>&nbsp;\n");
       out.write("        <a href=\"http://www.facebook.com\"><img src=\"images/fb.png\" height=\"50\" width=\"50\" alt=\"Facebook\"></a>&nbsp;\n");
       out.write("        <a href=\"http://www.linkedin.com\"><img src=\"images/linkedin.png\" height=\"50\" width=\"50\" alt=\"Linkedin\"></a>&nbsp;\n");
       out.write("        <a href=\"http://www.twitter.com\"><img src=\"images/tweeter.png\" height=\"50\" width=\"50\" alt=\"Twitter\"></a>&nbsp;\n");
       out.write("    </div>\n");
-      out.write("            <h6>Copyright © 2008 - 2018 Quikr India Private Limited</h6>\n");
-      out.write("        </center>\n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {

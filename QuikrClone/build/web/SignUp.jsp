@@ -25,7 +25,7 @@ if (/^\d{10}$/.test(x)) {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -35,7 +35,7 @@ if (/^\d{10}$/.test(x)) {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -45,77 +45,77 @@ if (/^\d{10}$/.test(x)) {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
-    width: 10%;
-    background-color: darkslategray;
-    color: white;
+    width: 7%;
+    background-color: white;
+    color: #0B5345;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px solid #0B5345;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color: #F9E79F;
-    color: black;
-    border: 1px solid darkslategray; 
+    background-color: #0B5345;
+    color: white;
+    font-weight: bold;
 }
 
 .input[type=text]:focus 
 {
-      background-color: #F9E79F;
+      background-color: lightcyan;
       color: black;
 }
 .input[type=password]:focus 
 {
-      background-color:#F9E79F;
+      background-color:lightcyan;
       color:black;
 }
 .input[type=email]:focus 
 {
-      background-color:#F9E79F;
+      background-color:lightcyan;
       color:black;
 }
 .select
 {
-      background-color:#F9E79F;
+      background-color: white;
         color:black;
 }
 
 .select:hover {
-    background-color:white;
-    color:black;
+    background-color:#0B5345;
+    color:white;
 }
 .i{
     width: 10%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
 .i[type=text]:focus 
 {
-      background-color: #F9E79F;
+      background-color: lightcyan;
       color: black;
 }
 </style>
 <title>Register</title>
     </head>
-    <body style="font-family:verdana" >
+    <body style="font-family:verdana">
         <center>
-            <h1>Register</h1>
+            <h2>Sign Up</h2>
             <img src="images/theUser.png" alt="User" height="200" width="200"><br><br>
             <div>
             <form action="SignUpPage" name="SignUpForm" method="post" onsubmit="return mob()">
-                <input type="text" name="FirstName" placeholder="First Name" class="i" required>&nbsp;
+                <input type="text" name="FirstName" placeholder="First Name" class="i" required>
                 <input type="text" name="LastName" placeholder="Last Name" class="i" required><br><br>
                 <input type="text" name="username" placeholder="Username" class="input" required><br><br>
                 <input type="password" name="password" placeholder="Password" class="input" required><br><br>
@@ -135,8 +135,10 @@ if (/^\d{10}$/.test(x)) {
                 <form method="post" action="Home.jsp">
                 <input type="submit" value="Cancel" class="input">
                 </form>
+                <h6 style="color: #0B5345">*By Signing up, you agree to T&C and Privacy Policy.</h6>
                 <br>
             </div>
+                 
         </center>
     </body>
 </html>

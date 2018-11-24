@@ -13,7 +13,7 @@ and open the template in the editor.
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -23,50 +23,51 @@ and open the template in the editor.
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
-    width: 10%;
-    background-color: darkslategray;
-    color: white;
+    width: 7%;
+    background-color: white;
+    color: #0B5345;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px solid #0B5345;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color: #F9E79F;
-    color: black;
-    border: 1px solid darkslategray; 
+    background-color:#0B5345;
+    color:white;
+    font-weight: bold;
+    border: 1px solid white; 
 }
 
 .input[type=text]:focus 
 {
-      background-color: #F9E79F;
+      background-color: lightcyan;
       color: black;
 }
 .input[type=password]:focus 
 {
-      background-color:#F9E79F;
+      background-color:lightcyan;
       color:black;
 }
 </style>
         <title>Login</title>
     </head>
-    <body style="font-family:verdana">
+    <body style="font-family:verdana; display: inline;">
         <center>
-       <h1>Login</h1>
+            <h2>Sign In</h2>
        <img src="images/theUser.png" alt="User" height="200" width="200"><br><br>
        <div>
        <form action="LoginPage" method="post"><br>
         <input type="text" name="username" placeholder="Username" class="input" required><br><br>
         <input type="password" name="password" placeholder="Password" class="input" required><br><br>
-        <input type="submit" name="Login" value="Login" class="input">
+        <input type="submit" name="Login" value="Sign In" class="input">
         </form>
            <form method="post" action="Home.jsp">
                 <input type="submit" value="Cancel" class="input">
@@ -75,7 +76,7 @@ and open the template in the editor.
            </div>
        <div>
            <a href="SecurityQ.jsp">Forgot Password?</a><br>
-        <h6>*By Signing in you agree to T&C and Privacy Policy</h6>     
+        <h6 style="color: #0B5345">*By Signing in, you agree to T&C and Privacy Policy.</h6>     
            </div>
         </center>
     </body>

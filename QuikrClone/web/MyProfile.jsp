@@ -47,7 +47,7 @@
         table {
     border-collapse: collapse;
     width: 40%;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
 }
 
 td {
@@ -60,19 +60,19 @@ tr:nth-child(even){background-color: lightyellow;}
 
 .input[type=submit] {
     width: 10%;
-    background-color: darkslategray;
-    color: white;
+    background-color: white;
+    color: #0B5345;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px solid #0B5345;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color: #F9E79F;
-    color: black;
-    border: 1px solid darkslategray; 
+    background-color: #0B5345;
+    color: white;
+    font-weight: bold;
 }
 
 </style>
@@ -80,7 +80,7 @@ tr:nth-child(even){background-color: lightyellow;}
     </head>
     <body style="font-family:verdana">
     <center>
-        <h1>My Profile</h1>
+        <h2>My Profile</h2>
         <img src="images/myprofile.png" height="150" width="200"><br><br>
         <form>
            <table>

@@ -1,0 +1,25 @@
+SMAP
+PostAd_jsp.java
+JSP
+*S JSP
+*F
++ 0 PostAd.jsp
+PostAd.jsp
++ 1 Header.jsp
+Header.jsp
++ 2 Footer.jsp
+Footer.jsp
+*L
+5,2:50
+5#1,99:52
+104,18:152
+121,2:170
+123:172,3
+124,26:175
+149,5:201
+153,4:206
+7#0:209
+9,5:211
+13,25:216
+5#2,27:240
+*E

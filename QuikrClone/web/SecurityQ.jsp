@@ -35,7 +35,7 @@ function validateForm() {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -45,51 +45,50 @@ function validateForm() {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid darkslategray;
+    border: 1px solid #0B5345;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
     width: 10%;
-    background-color: darkslategray;
-    color: white;
+    background-color: white;
+    color: #0B5345;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px solid #0B5345;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color: #F9E79F;
-    color: black;
-    border: 1px solid darkslategray; 
+       background-color:#0B5345;
+    color:white;
+    font-weight: bold;
+    border: 1px solid white; 
 }
 
 .input[type=text]:focus 
 {
-      background-color: #F9E79F;
+      background-color: lightcyan;
       color: black;
 }
 .input[type=password]:focus 
 {
-      background-color:#F9E79F;
+      background-color:lightcyan;
       color:black;
 }
 .select
 {
-      background-color:#F9E79F;
+      background-color:white;
         color:black;
 }
 
 .select:hover {
-    background-color:white;
-    color:black;
+    background-color:#0B5345;
+    color:white;
 }
-i{
-    color: red;
-}
+
 </style>
         <title>Login Page</title>
     </head>
@@ -125,7 +124,7 @@ i{
                 out.println("<option name='ques4' value='ques4' class='select'>Who was your childhood hero</option>");
                 out.println("</select><br>");
                 out.println("<input type='text' name='ans' placeholder='Your Answer' class='input' required><br><br>");
-                out.println("<input type='submit' name='confirm' value='Confirm' class='input'>");
+                out.println("<input type='submit' style='' name='confirm' value='Confirm' class='input'>");
                 out.println("</form><form action='Home.jsp' method='post'><input type='submit' name='cancel' value='Cancel' class='input'></form>");
                 out.println("<h6><i><u>Warning</u></i>:- Please note that delete your account can't be undone. So do it carefully.</h6></center>");
             }
