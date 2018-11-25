@@ -43,18 +43,31 @@
             Statement st1=c.createStatement();
             String query1="select * from postad where sellerName='"+name+"'";
             ResultSet rs=st1.executeQuery(query1);
+            int flag=1;
             while(rs.next())
             {
                 String n=rs.getString("sellerName");
                 String cat=rs.getString("category");
+                String item=rs.getString("itemType");
                 int p=rs.getInt("price");
                 String ds=rs.getString("description");
+                String date=rs.getString("date");
                 if(name.equals(n))
                 {
-                    out.println("<center><table border='1px'><tr><td>Category</td><td>Price</td><td>Description</td></tr>");
-                    out.println("<tr><td>"+cat+"</td><td>"+p+"</td><td>"+ds+"</td></tr>");
+                    flag=0;
+                    out.println("<center><table border='1px'>");
+                    out.println("<tr><td>Posted On</td>");
+                    out.println("<td>Category</td>");
+                    out.println("<td>Item Type</td>");
+                    out.println("<td>Price</td>");
+                    out.println("<td>Description</td>");
+                    out.println("<tr><td>"+date+"</td><td>"+cat+"</td><td>"+item+"</td><td>"+p+"</td><td>"+ds+"</td></tr>");
                     out.println("</table></center><br>");
                 }
+            }
+            if(flag==1)
+            {
+                out.println("<center>You have not posted yet</center>");
             }
         %>
 <!DOCTYPE html>
@@ -72,8 +85,8 @@ td {
     padding: 22px;
 }
 
-tr:nth-child(odd){background-color: #F9E79F;}
-tr:nth-child(even){background-color: lightyellow;}
+tr:nth-child(odd){background-color: lightgreen;}
+tr:nth-child(even){background-color: lightblue;}
 
 .input[type=submit] {
     width: 10%;
@@ -93,7 +106,7 @@ tr:nth-child(even){background-color: lightyellow;}
 }
 
 </style>
-        <title>My Profile</title>
+        <title>My Ads</title>
     </head>
     <body style="font-family:verdana">
     </body>

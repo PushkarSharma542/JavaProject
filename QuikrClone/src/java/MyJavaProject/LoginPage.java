@@ -54,6 +54,7 @@ public class LoginPage extends HttpServlet
                     {    
                         flag=0;
                         session.setAttribute("username",uname);
+                        session.removeAttribute("login");
                         res.sendRedirect("Home.jsp");
                     }
                 }

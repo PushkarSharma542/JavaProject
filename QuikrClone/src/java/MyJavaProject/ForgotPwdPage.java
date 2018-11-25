@@ -34,9 +34,13 @@ public class ForgotPwdPage extends HttpServlet {
     public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException
     {
         HttpSession session=req.getSession();
-        String uname=(String)session.getAttribute("username");
+        if(session.getAttribute("fpwd")==null)
+        {
+            res.sendRedirect("Home.jsp");
+        }
+        String uname=(String)session.getAttribute("tempuser");
         String pass=req.getParameter("Npassword");
-        //String pass1=req.getParameter("Cpassword");
+        String pass1=req.getParameter("Cpassword");
         PrintWriter out=res.getWriter();
         int flag=1;
         try {
@@ -56,7 +60,10 @@ public class ForgotPwdPage extends HttpServlet {
         }
         else
         {
-           res.sendRedirect("Login.jsp");
+            session.removeAttribute("tempuser");
+            session.removeAttribute("fpwd");
+            //session.invalidate();
+            res.sendRedirect("Login.jsp");
         }
     }
 }

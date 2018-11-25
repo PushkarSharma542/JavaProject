@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,6 +31,11 @@ public class SecurityQPage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException
     {
+        HttpSession session=req.getSession();
+        if(session.getAttribute("fpwd")==null)
+        {
+            res.sendRedirect("Home.jsp");
+        }
         PrintWriter out=res.getWriter();
         String user=req.getParameter("username");
         String ques=req.getParameter("securityQ");
@@ -52,6 +58,7 @@ public class SecurityQPage extends HttpServlet {
             if(duser.equals(user) && dques.equals(ques) && dans.equals(a))
             {    
                 flag=1;
+                session.setAttribute("tempuser",user);
                 res.sendRedirect("ForgotPwd.jsp");
             }
         }

@@ -81,21 +81,18 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    text-align: center;\n");
       out.write("    padding: 14px 16px;\n");
       out.write("    text-decoration: none;\n");
-      out.write("    font-weight: bold;\n");
       out.write("}\n");
       out.write("\n");
       out.write(".dropdown {\n");
       out.write("    float: left;\n");
       out.write("    overflow: hidden;\n");
-      out.write("    font-weight: bold;\n");
       out.write("}\n");
       out.write("\n");
-      out.write(".dropdown .dropbtn {\n");
+      out.write(".dropbtn {\n");
       out.write("    font-size: 16px;    \n");
       out.write("    border: none;\n");
       out.write("    outline: none;\n");
       out.write("    color: white;\n");
-      out.write("    font-weight: bold;\n");
       out.write("    padding: 14px 16px;\n");
       out.write("    background-color: inherit;\n");
       out.write("    font-family: verdana;\n");
@@ -139,6 +136,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("   float: right;\n");
       out.write("   border-radius:10px;\n");
       out.write("   font-family: verdana;\n");
+      out.write("   cursor: pointer;\n");
       out.write("}\n");
       out.write("\n");
       out.write(".postadd:hover\n");
@@ -155,11 +153,12 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    margin-right: 8px;\n");
       out.write("    margin-top: 28px;\n");
       out.write("}\n");
+      out.write("\n");
       out.write("</style>\n");
-      out.write("<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\n");
       out.write("</head>\n");
       out.write("<body style=\"font-family:verdana\">\n");
       out.write("    <div>\n");
+      out.write("        <a href=\"Cart.jsp\"><img src=\"images/mycart.png\" height=\"50\" width=\"50\" style=\"float:right; margin-right:5px;margin-left:4px; margin-top:12px\"></a>\n");
       out.write("        ");
 
             if(session.getAttribute("username")==null)
@@ -167,7 +166,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
                 out.println("<form action='Login.jsp' method='post' class='right'>");
                 String u="Guest";
                 pageContext.setAttribute("username",u);
-            out.println("<br><input type='submit' value='Login' class='postadd'>");
+            out.println("<br><input type='submit' value='Login' class='postadd'><i class='fa fa-sort-down'></i>");
         out.println("</form>");
             }
             else
@@ -186,65 +185,70 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
 out.println("Welcome ");out.print(pageContext.findAttribute("username"));
       out.write("</h4>\n");
       out.write("    <img src=\"images/Logo.png\"><br>\n");
-      out.write("    \n");
       out.write("<div class=\"navbar\">\n");
       out.write("  <a href=\"Home.jsp\">Home</a>\n");
-      out.write("  <a href=\"MyProfile.jsp\">My Profile</a>\n");
-      out.write("  <a href=\"About.jsp\">About</a>\n");
       out.write("  <div class=\"dropdown\">\n");
-      out.write("    <button class=\"dropbtn\">Categories \n");
-      out.write("      <i class=\"fa fa-caret-down\"></i>\n");
+      out.write("    <button class=\"dropbtn\">Categories\n");
       out.write("    </button>\n");
       out.write("    <div class=\"dropdown-content\">\n");
-      out.write("      <a href=\"#\">Electronics</a>\n");
-      out.write("      <a href=\"#\">Education</a>\n");
-      out.write("      <a href=\"#\">Automobiles</a>\n");
+      out.write("      <a href=\"Electronics.jsp\">Electronics</a>\n");
+      out.write("      <a href=\"Education.jsp\">Education</a>\n");
+      out.write("      <a href=\"Automobiles.jsp\">Automobiles</a>\n");
       out.write("    </div>\n");
       out.write("  </div>\n");
+      out.write("    <a href=\"About.jsp\">About</a>\n");
+      out.write("    ");
+
+        if(session.getAttribute("username")!=null)
+        {
+            out.println("<div class='dropdown'><button class='dropbtn'>My Account</button>");
+            out.println("<div class='dropdown-content'>");
+            out.println("<a href='MyProfile.jsp'>My Profile</a>");
+            out.println("<a href='MyAds.jsp'>My Ads</a></div></div>");
+        }
+    
+      out.write("\n");
       out.write("  <div class=\"right\">\n");
       out.write("      <a href=\"PostAd.jsp\">Post Free Ad</a>\n");
-      out.write("      <a href=\"SignUp.jsp\" >Register&nbsp;\n");
-      out.write("          <i class=\"fas fa-user\" style=\"font-size:17px; color: white;\"></i>\n");
+      out.write("      <a href=\"SignUp.jsp\" >Register\n");
       out.write("      </a>\n");
       out.write("  </div>\n");
-      out.write("        \n");
       out.write("</div>\n");
       out.write("   <hr color=\"#0B5345\"> \n");
-      out.write("   ");
-if(session.getAttribute("username")!=null)
-   {
-       out.println("<img src='images/mycart.png' style='float:right; margin-right:5px'>");
-   }
-   
-      out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");
       out.write("\n");
       out.write("<html>\n");
       out.write("    <title>Home</title>\n");
-      out.write("    <body>\n");
+      out.write("    <body><br>\n");
+      out.write("    <center><h6>*All recent ads will show here</h6></center>\n");
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","");
         Statement s=con.createStatement();
-        ResultSet r=s.executeQuery("select * from postad");
+        ResultSet r=s.executeQuery("select * from postad order by date DESC");
         while(r.next())
         {
             System.out.println(LocalDateTime.now());
             String user=r.getString("sellerName");
             String cat=r.getString("category");
+            String subCat=r.getString("itemType");
             String price=r.getString("price");
             String desc=r.getString("description");
-            out.print("<html><div><form style='font-family: arial'><table align='left'><tr><td>"+"Seller name : "+user+"</td></tr>");
+            String Date=r.getString("date");
+            out.println("<center><img src='images/default.gif'>");
+            out.print("<div><form style='font-family: arial'><table>");
+            out.print("<tr><td>"+"Posted on  : "+Date+"</td></tr>");
             out.print("<tr><td>"+"Item category : "+cat+"</td></tr>");
+            out.print("<tr><td>"+"Item type : "+subCat+"</td></tr>");
+            out.println("<tr><td>"+"Seller name : "+user+"</td></tr>");
             out.print("<tr><td>"+"Price : Rs. "+price+"</td></tr>");
             out.print("<tr><td>"+"Description : "+desc+"</td></tr>");
-            out.print("<tr><td style=><form action='#buynow' method='post'><input type='submit' style='background-color: yellow; padding: 8px 10px; border:1px solid darkslategray; border-radius: 4px;' value='Buy Now'></form></td></tr></table>");
-            out.print("</form></div></html>");
+            out.print("<tr><td><br><center><form action='#buynow' method='post'><input type='submit' style='background-color: yellow; padding: 4px 10px; border:1px solid darkslategray; border-radius: 4px;' value='Buy Now'></form></td></center></tr></table>");
+            out.print("</form></div><br></center>");
         }
     
       out.write("\n");
-      out.write("    <br><br><br><br><br><br><br><br><br><br><br><br><br>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
       out.write("    ");
@@ -264,8 +268,10 @@ if(session.getAttribute("username")!=null)
       out.write("    <body>\n");
       out.write("        <hr color=\"#0B5345\">\n");
       out.write("        <img src=\"images/Logo.png\" class=\"ia\"><br>\n");
-      out.write("        <h5 style=\"margin-top: 5px;margin-left: 15px\">710-B, Advant Navis Business Park,<br>\n");
-      out.write("        Sector-142, Noida, Uttar Pradesh - 201305<br>\n");
+      out.write("        <h5 style=\"margin-top: 5px;margin-left: 15px\">\n");
+      out.write("        Quikr India Pvt Ltd,<br>\n");
+      out.write("        Block B, Mohan Cooperative Industrial Estate,<br> Badarpur, New Delhi, Delhi - 110076<br>\n");
+      out.write("\n");
       out.write("        feedback@quikr.com\n");
       out.write("        </h5>\n");
       out.write("        <center>\n");

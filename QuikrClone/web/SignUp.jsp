@@ -85,7 +85,7 @@ if (/^\d{10}$/.test(x)) {
 .select
 {
       background-color: white;
-        color:black;
+        color:#0B5345;
 }
 
 .select:hover {
@@ -105,6 +105,24 @@ if (/^\d{10}$/.test(x)) {
 {
       background-color: lightcyan;
       color: black;
+}
+
+.input1{
+    background-color: white;
+    color: #0B5345;
+    text-decoration: none;
+    padding: 10px 16px;
+    margin: 8px 0;
+    border: 2px solid #0B5345;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.input1:hover {
+    background-color:#0B5345;
+    color:white;
+    font-weight: bold;
+    border: 1px solid white; 
 }
 </style>
 <title>Register</title>
@@ -131,14 +149,11 @@ if (/^\d{10}$/.test(x)) {
                     </select><br><br>
                 <input type="text" name="ans" placeholder="Your Answer" class="input" required><br><br>
                 <input type="submit" value="Sign Up" class="input">
-        </form> 
-                <form method="post" action="Home.jsp">
-                <input type="submit" value="Cancel" class="input">
-                </form>
-                <h6 style="color: #0B5345">*By Signing up, you agree to T&C and Privacy Policy.</h6>
+            </form><br>
+               <a href="Home.jsp" class="input1">Cancel</a><br><br>
+                <h6>*By Signing up, you agree to T&C and Privacy Policy.</h6>
                 <br>
             </div>
-                 
         </center>
     </body>
 </html>

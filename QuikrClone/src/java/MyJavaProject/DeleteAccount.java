@@ -12,8 +12,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,12 +36,18 @@ public class DeleteAccount extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res)throws ServletException,IOException 
     {
+        HttpSession session=req.getSession();
+        if(session.getAttribute("delAcc")==null)
+        {
+            res.sendRedirect("Home.jsp");
+        }
         String uname =req.getParameter("username");
         String secq=req.getParameter("securityQ");
         String seca=req.getParameter("ans");
         String dbuname;
         String dbq;
         String dbans;
+        String fname=null,lname=null;
         try 
         {
             PrintWriter out=res.getWriter();
@@ -62,16 +66,29 @@ public class DeleteAccount extends HttpServlet {
                 dbuname=r.getString("username");
                 dbq=r.getString("securityQ");
                 dbans=r.getString("securityAns");
-                HttpSession session=req.getSession();
                 if(dbuname.equals(uname) && dbq.equals(secq) && dbans.equals(seca))
                 {    
+                    fname=r.getString("first_name");
+                    lname=r.getString("last_name");
                     int del=st.executeUpdate(query1);
-                    session.removeAttribute("key");
+                }
+            }
+            String name=fname+lname;
+            String Query1="select * from postad";
+            String Query2="delete from postad where sellerName='"+name+"'";
+            Statement s1=con.createStatement();
+            ResultSet rs=s1.executeQuery(Query1);
+            while(rs.next())
+            {
+                String temp=rs.getString("sellerName");
+                if(temp.equals(name))
+                {
+                    int c=s1.executeUpdate(Query2);
+                    session.removeAttribute("username");
                     session.invalidate();
                     res.sendRedirect("Home.jsp");
                 }
             }
-            out.println("not yipee");
     }   catch (ClassNotFoundException | SQLException ex) {}
     }
 }

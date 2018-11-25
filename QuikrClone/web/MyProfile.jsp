@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Welcome
+    Document   : MyProfile
     Created on : Nov 10, 2018, 10:55:22 AM
     Author     : PushkarSharma
 --%>
@@ -15,6 +15,7 @@
             {
                 response.sendRedirect("Login.jsp");
             }
+            session.setAttribute("myprofile",1234);
             String Username;
             String Email;
             String mob;
@@ -114,7 +115,6 @@ tr:nth-child(even){background-color: lightyellow;}
                 <input type="submit" value="Edit Details" class="input">
                 </form>
                 <form action="SecurityQ.jsp" method="post">
-                    <%session.setAttribute("key",1);%>
                 <input type="submit" value="Delete Account" class="input">
                 </form>
         </form>

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Home
+    Document   : Header
     Created on : Nov 16, 2018, 10:06:32 AM
     Author     : PushkarSharma
 --%>
@@ -22,21 +22,18 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .dropdown {
     float: left;
     overflow: hidden;
-    font-weight: bold;
 }
 
-.dropdown .dropbtn {
+.dropbtn {
     font-size: 16px;    
     border: none;
     outline: none;
     color: white;
-    font-weight: bold;
     padding: 14px 16px;
     background-color: inherit;
     font-family: verdana;
@@ -80,6 +77,7 @@
    float: right;
    border-radius:10px;
    font-family: verdana;
+   cursor: pointer;
 }
 
 .postadd:hover
@@ -91,22 +89,12 @@
 .right{
     float: right;
 }
-.ads{
-    float:right;
-    background-color:greenyellow;
-    color: #0B5345;
-    text-decoration: none;
-    margin-right: 6px;
-    padding: 8px 15px;
-    margin-top: -15px;
-    border: 1px solid #0B5345;
-    border-radius: 5px;
-}
 h4{
     float: right;
     margin-right: 8px;
     margin-top: 28px;
 }
+
 </style>
 </head>
 <body style="font-family:verdana">
@@ -118,7 +106,7 @@ h4{
                 out.println("<form action='Login.jsp' method='post' class='right'>");
                 String u="Guest";
                 pageContext.setAttribute("username",u);
-            out.println("<br><input type='submit' value='Login' class='postadd'>");
+            out.println("<br><input type='submit' value='Login' class='postadd'><i class='fa fa-sort-down'></i>");
         out.println("</form>");
             }
             else
@@ -132,22 +120,29 @@ h4{
             }
         %>
     </div>
-    <h4 style="color: #0B5345"><%out.println("Welcome ");out.print(pageContext.findAttribute("username"));%></h4>
+    <h4><%out.println("Welcome ");out.print(pageContext.findAttribute("username"));%></h4>
     <img src="images/Logo.png"><br>
-    
 <div class="navbar">
   <a href="Home.jsp">Home</a>
-  <a href="MyProfile.jsp">My Profile</a>
-  <a href="About.jsp">About</a>
   <div class="dropdown">
-    <button class="dropbtn">Categories 
+    <button class="dropbtn">Categories
     </button>
     <div class="dropdown-content">
-      <a href="#">Electronics</a>
-      <a href="#">Education</a>
-      <a href="#">Automobiles</a>
+      <a href="Electronics.jsp">Electronics</a>
+      <a href="Education.jsp">Education</a>
+      <a href="Automobiles.jsp">Automobiles</a>
     </div>
   </div>
+    <a href="About.jsp">About</a>
+    <%
+        if(session.getAttribute("username")!=null)
+        {
+            out.println("<div class='dropdown'><button class='dropbtn'>My Account</button>");
+            out.println("<div class='dropdown-content'>");
+            out.println("<a href='MyProfile.jsp'>My Profile</a>");
+            out.println("<a href='MyAds.jsp'>My Ads</a></div></div>");
+        }
+    %>
   <div class="right">
       <a href="PostAd.jsp">Post Free Ad</a>
       <a href="SignUp.jsp" >Register
@@ -155,12 +150,5 @@ h4{
   </div>
 </div>
    <hr color="#0B5345"> 
-   <%if(session.getAttribute("username")!=null)
-   {
-        out.println("<form action='MyAds.jsp' method='post' >");
-        out.println("<br><a href='MyAds.jsp' class='ads'>My Ads</a>");
-        out.println("</form>");
-   }
-   %>
 </body>
 </html>

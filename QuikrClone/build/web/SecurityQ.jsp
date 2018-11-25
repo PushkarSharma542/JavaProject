@@ -13,16 +13,16 @@
 function validateForm() {
     var x = document.forms["LoginForm"]["username"].value;
     var y=document.forms["LoginForm"]["password"].value;
-    if (x == "" && y == "") {
+    if (x === "" && y === "") {
         alert("Please fill both username and password!!! don't leave both empty");
         return false;
     }
-        if (x=="")
+        if (x==="")
         {
             alert("Please fill username!!! don't leave it empty");
             return false;
         }
-        if(y=="")
+        if(y==="")
         {
             alert("Please fill password!!! don't leave it empty");
             return false;
@@ -51,7 +51,7 @@ function validateForm() {
 }
 
 .input[type=submit] {
-    width: 10%;
+    width: 7%;
     background-color: white;
     color: #0B5345;
     padding: 14px 20px;
@@ -90,11 +90,12 @@ function validateForm() {
 }
 
 </style>
-        <title>Login Page</title>
+        <title>Security Questions</title>
     </head>
     <body style="font-family:verdana">
         <%
-            if(session.getAttribute("key")==null){
+            if(session.getAttribute("username")==null && session.getAttribute("login")!=null){
+                session.setAttribute("fpwd",1234);
                 out.println("<center><h1>Security Questions</h1>");
                 out.println("<h6>*please answer any one question to change your password</h6>");
                 out.println("<form action='SecurityQPage' method='post' name='LoginForm' onsubmit='return validateForm()'><br>");
@@ -110,7 +111,7 @@ function validateForm() {
                 out.println("<input type='submit' name='Login' value='Submit' class='input'><br>");
                 out.println("</form><br></center>");
             }
-            else
+            else if(session.getAttribute("myprofile")!=null)
             {
                 out.println("<center><h1>Security Questions</h1>");
                 out.println("<h6>*please answer any one question to delete you account.</h6>");
@@ -124,9 +125,13 @@ function validateForm() {
                 out.println("<option name='ques4' value='ques4' class='select'>Who was your childhood hero</option>");
                 out.println("</select><br>");
                 out.println("<input type='text' name='ans' placeholder='Your Answer' class='input' required><br><br>");
-                out.println("<input type='submit' style='' name='confirm' value='Confirm' class='input'>");
+                out.println("<input type='submit' name='confirm' value='Confirm' class='input'>");
                 out.println("</form><form action='Home.jsp' method='post'><input type='submit' name='cancel' value='Cancel' class='input'></form>");
-                out.println("<h6><i><u>Warning</u></i>:- Please note that delete your account can't be undone. So do it carefully.</h6></center>");
+                out.println("<h6 style='color:red'><i><u>Warning</u></i>:- Please note that delete your account will delete your posted Ads also. It can't be undone.</h6></center>");
+            }
+            else
+            {
+                response.sendRedirect("Home.jsp");
             }
         %>
     </body>

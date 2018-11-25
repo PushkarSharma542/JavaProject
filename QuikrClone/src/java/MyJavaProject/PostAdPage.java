@@ -12,8 +12,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,13 +36,27 @@ public class PostAdPage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException 
     {
+        String Cat=null;
         PrintWriter out=res.getWriter();
         String select=req.getParameter("AdCategory");
+        if(select.equals("mobile") | select.equals("laptop"))
+        {
+            Cat="Electronics";
+        }
+        else if(select.equals("school book") | select.equals("college book") | select.equals("stationary item"))
+        {
+            Cat="Education";
+        }
+        else if(select.equals("car") | select.equals("bike") | select.equals("bicycle"))
+        {
+            Cat="Automobiles";
+        }
         String price=req.getParameter("price");
         String desc=req.getParameter("description");
         String url="jdbc:mysql://localhost:3306/userinfo";
         String u="root";
         String p="";
+        String date=GetDate.getDate();
         String fname = null;
         String lname = null;
         try
@@ -63,16 +75,15 @@ public class PostAdPage extends HttpServlet {
                 if(cUser.equals(us))
                 {
                     fname=rs.getString("first_name");
-                    lname=rs.getString("last_name");
-                    out.println(fname);
-                    out.println(lname);
+                    lname=rs.getString("last_name");                    
                 }
             }
             String name=fname+lname;
-            String query="insert into postad values('"+select+"','"+name+"','"+price+"','"+desc+"')";
+            String query="insert into postad values('"+Cat+"','"+select+"','"+name+"','"+price+"','"+desc+"','"+date+"')";
             int r=st.executeUpdate(query);
-            out.println("posted");
+            res.sendRedirect("Home.jsp");
         }
         catch(SQLException | ClassNotFoundException ex){}
     }
+    
 }
