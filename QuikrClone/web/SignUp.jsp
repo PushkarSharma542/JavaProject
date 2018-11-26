@@ -25,7 +25,7 @@ if (/^\d{10}$/.test(x)) {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -35,7 +35,7 @@ if (/^\d{10}$/.test(x)) {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -45,89 +45,92 @@ if (/^\d{10}$/.test(x)) {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
     width: 7%;
-    background-color: white;
-    color: #0B5345;
+    background-color: #2E86C1;;
+    color:white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color: #0B5345;
-    color: white;
-    font-weight: bold;
+    background-color:#2E86C1;
+    color:white;
+    border: none;
+    font-weight: bold; 
 }
 
 .input[type=text]:focus 
 {
-      background-color: lightcyan;
+      background-color: white;
+      border: 1px solid #2E86C1;
       color: black;
 }
 .input[type=password]:focus 
 {
-      background-color:lightcyan;
-      color:black;
+      background-color: white;
+      border: 1px solid #2E86C1;
+      color: black;
 }
 .input[type=email]:focus 
 {
-      background-color:lightcyan;
-      color:black;
+      background-color: white;
+      border: 1px solid #2E86C1;
+      color: black;
 }
 .select
 {
       background-color: white;
-        color:#0B5345;
+        color:black;
 }
 
 .select:hover {
-    background-color:#0B5345;
-    color:white;
+    background-color:#2E86C1;
+      color: white;
 }
 .i{
     width: 10%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 .i[type=text]:focus 
 {
-      background-color: lightcyan;
+      background-color: white;
+      border: 1px solid #2E86C1;
       color: black;
 }
 
 .input1{
-    background-color: white;
-    color: #0B5345;
+    background-color:#2ECC71;
+    color: white;
     text-decoration: none;
     padding: 10px 16px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input1:hover {
-    background-color:#0B5345;
     color:white;
     font-weight: bold;
-    border: 1px solid white; 
 }
 </style>
 <title>Register</title>
     </head>
-    <body style="font-family:verdana">
+    <body style="font-family:verdana" bgcolor="#F2F4F4">
         <center>
             <h2>Sign Up</h2>
             <img src="images/theUser.png" alt="User" height="200" width="200"><br><br>

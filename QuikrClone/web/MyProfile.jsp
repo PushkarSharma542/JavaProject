@@ -48,8 +48,12 @@
         table {
     border-collapse: collapse;
     width: 40%;
-    border: 1px solid #0B5345;
-}
+    border-top: 1px solid #2E86C1;
+    border-bottom : 1px solid #2E86C1;
+    border-top: 1px solid #2E86C1;
+    border-left: 1px solid #2ECC71;
+    border-right: 1px solid #2ECC71;
+    }
 
 td {
     text-align:center;
@@ -61,25 +65,36 @@ tr:nth-child(even){background-color: lightyellow;}
 
 .input[type=submit] {
     width: 10%;
-    background-color: white;
-    color: #0B5345;
+    background-color:#2E86C1;
+    color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color: #0B5345;
-    color: white;
     font-weight: bold;
 }
+.input1[type=submit] {
+    width: 10%;
+    background-color:#2ECC71;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
+.input1[type=submit]:hover {
+    font-weight: bold;
+}
 </style>
         <title>My Profile</title>
     </head>
-    <body style="font-family:verdana">
+    <body style="font-family:verdana" bgcolor="#F2F4F4">
     <center>
         <h2>My Profile</h2>
         <img src="images/myprofile.png" height="150" width="200"><br><br>
@@ -115,7 +130,7 @@ tr:nth-child(even){background-color: lightyellow;}
                 <input type="submit" value="Edit Details" class="input">
                 </form>
                 <form action="SecurityQ.jsp" method="post">
-                <input type="submit" value="Delete Account" class="input">
+                <input type="submit" value="Delete Account" class="input1">
                 </form>
         </form>
         </center>

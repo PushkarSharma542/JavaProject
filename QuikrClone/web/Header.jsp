@@ -10,7 +10,7 @@
    <style>
 .navbar {
     overflow: hidden;
-    background-color:#0B5345;
+    background-color:white;
     font-family: verdana;
     border-radius: 4px;
 }
@@ -18,7 +18,8 @@
 .navbar a {
     float: left;
     font-size: 16px;
-    color: white;
+    color: black;
+    margin-top: 10px;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -27,13 +28,14 @@
 .dropdown {
     float: left;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 .dropbtn {
     font-size: 16px;    
     border: none;
     outline: none;
-    color: white;
+    color: black;
     padding: 14px 16px;
     background-color: inherit;
     font-family: verdana;
@@ -59,7 +61,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #0B5345;
+    background-color: #2E86C1;
     color:white;
 }
 
@@ -68,11 +70,12 @@
 }
 
 .postadd{
-    border: 2px solid #0B5345;
-    background-color: white;
+    border:none;
+    background-color: #2E86C1;
     margin-right: 10px;
-    color: darkgreen;
+    color: white;
     width: 100px;
+    margin-top: 4px;
     height:40px;
    float: right;
    border-radius:10px;
@@ -82,7 +85,6 @@
 
 .postadd:hover
 {
-    background-color:#0B5345;
     color:white;
     font-weight: bold;
 }
@@ -90,49 +92,59 @@
     float: right;
 }
 h4{
-    float: right;
-    margin-right: 8px;
-    margin-top: 28px;
+    float: right;   
+    margin-top: 12px;
+    margin-right: 10px;
+    color:#2E86C1;
+    font-family: Gill Sans MT;
 }
-
+.logo{
+    float:left;
+}
+.postadd1{
+    border:1px solid #F1C40F;
+    background-color: #F4E60A;
+    margin-right: 10px;
+    color: white;
+    width: 85px;
+    height:15px;
+   font-family: Rockwell-Condensed;
+   cursor: pointer;
+}
 </style>
 </head>
 <body style="font-family:verdana">
-    <div>
-        <a href="Cart.jsp"><img src="images/mycart.png" height="50" width="50" style="float:right; margin-right:5px;margin-left:4px; margin-top:12px"></a>
-        <%
+    <a href="Cart.jsp"><img src="images/cart.png" height="35" width="35" style="float:right;margin-top: 5px;margin-right: 5px;margin-left:7px"></a>
+    <%
             if(session.getAttribute("username")==null)
             {
                 out.println("<form action='Login.jsp' method='post' class='right'>");
                 String u="Guest";
-                pageContext.setAttribute("username",u);
-            out.println("<br><input type='submit' value='Login' class='postadd'><i class='fa fa-sort-down'></i>");
-        out.println("</form>");
+            out.println("<input type='submit' value='Login' class='postadd'><i class='fa fa-sort-down'></i>");
+        out.println("</form>");  
+        out.println("<h4>Welcome "+u+"</h4>");
             }
             else
             {
                 out.println("<form action='LogoutPage' method='post' class='right'>");
-                String user=(String)session.getAttribute("username");
                 String u=(String)session.getAttribute("username");
-                pageContext.setAttribute("username",u);
-            out.println("<br><input type='submit' value='Logout' class='postadd'>");
+            out.println("<input type='submit' value='Logout' class='postadd'>");
         out.println("</form>");
+        out.println("<h4>Welcome "+u+"</h4>");
             }
         %>
-    </div>
-    <h4><%out.println("Welcome ");out.print(pageContext.findAttribute("username"));%></h4>
-    <img src="images/Logo.png"><br>
+        <br><br><br>
 <div class="navbar">
-  <a href="Home.jsp">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn">Categories
-    </button>
-    <div class="dropdown-content">
-      <a href="Electronics.jsp">Electronics</a>
-      <a href="Education.jsp">Education</a>
-      <a href="Automobiles.jsp">Automobiles</a>
+    <img style="margin-left:5px" src="images/Logo.jpg" height="70" width="150" class="logo">
+    <a href="Home.jsp">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+        <div class="dropdown-content">
+            <a href="Electronics.jsp">Electronics</a>
+            <a href="Education.jsp">Education</a>
+                <a href="Automobiles.jsp">Automobiles</a>
+        </div>
     </div>
-  </div>
     <a href="About.jsp">About</a>
     <%
         if(session.getAttribute("username")!=null)
@@ -143,12 +155,11 @@ h4{
             out.println("<a href='MyAds.jsp'>My Ads</a></div></div>");
         }
     %>
-  <div class="right">
-      <a href="PostAd.jsp">Post Free Ad</a>
-      <a href="SignUp.jsp" >Register
-      </a>
-  </div>
+    <div class="right">
+        <a href="SignUp.jsp" >Register</a>
+        <a href="PostAd.jsp" class="postadd1">Post Free Ad</a>
+    </div>
 </div>
-   <hr color="#0B5345"> 
+    <hr>
 </body>
 </html>

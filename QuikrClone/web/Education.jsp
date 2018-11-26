@@ -13,7 +13,7 @@
 <%@include file="Header.jsp"%>
 <html>
     <title>Education</title>
-    <body>
+    <body bgcolor="#F2F4F4">
 <%
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","");
@@ -24,12 +24,14 @@
             String user=r.getString("sellerName");
             String cat=r.getString("category");
             String subCat=r.getString("itemType");
+            int itemno=r.getInt("itemNumber");
             String price=r.getString("price");
             String desc=r.getString("description");
             String Date=r.getString("date");
             out.println("<center><img src='images/default.gif'>");
             out.print("<div><form style='font-family: arial'><table>");
             out.print("<tr><td>"+"Posted on  : "+Date+"</td></tr>");
+            out.print("<tr><td>"+"Item Number : "+itemno+"</td></tr>");
             out.print("<tr><td>"+"Item category : "+cat+"</td></tr>");
             out.print("<tr><td>"+"Item type : "+subCat+"</td></tr>");
             out.println("<tr><td>"+"Seller name : "+user+"</td></tr>");

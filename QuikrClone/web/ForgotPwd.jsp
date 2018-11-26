@@ -19,52 +19,44 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
     width: 12%;
-    background-color: white;
-    color: #0B5345;
+    background-color: #2E86C1;
+    color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color:#0B5345;
-    color:white;
     font-weight: bold;
-    border: 1px solid white; 
-    cursor: pointer;
 }
 
 .input[type=password]:focus 
 {
-      background-color:lightcyan;
-      color:black;
+      border: 1px solid #2E86C1;
 }
 
 .input1{
-    background-color: white;
-    color: #0B5345;
+    background-color:#2ECC71;
+    color: white;
     text-decoration: none;
     padding: 10px 16px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border:none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input1:hover {
-    background-color:#0B5345;
-    color:white;
     font-weight: bold;
-    border: 1px solid white; 
 }
 
 </style>
@@ -81,7 +73,7 @@ if(x!==y)
 </script>
         <title>Reset your Password</title>
     </head>
-    <body style="font-family:verdana">
+    <body style="font-family:verdana" bgcolor="#F2F4F4">
         <center>
             <h1>Password Reset</h1>
             <img src="images/passwordReset.png" alt="ForgotPasswordLogo" height="250" width="250">

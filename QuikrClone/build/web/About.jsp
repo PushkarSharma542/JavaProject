@@ -21,7 +21,7 @@
         </style>
     <title>About</title>
     </head>
-    <body class="body">
+    <body class="body" bgcolor="#F2F4F4">
         <img src="images/About.jpg" width="1330" height="700">
         <h2 class="h2">Our story begins with you</h2>
         Quikr is all about you - Our aim is to empower every person in the country to independently 

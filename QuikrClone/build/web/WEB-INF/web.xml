@@ -28,6 +28,10 @@
         <servlet-name>PostAdPage</servlet-name>
         <servlet-class>MyJavaProject.PostAdPage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuyNow</servlet-name>
+        <servlet-class>MyJavaProject.BuyNow</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginPage</servlet-name>
         <url-pattern>/LoginPage</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>PostAdPage</servlet-name>
         <url-pattern>/PostAdPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyNow</servlet-name>
+        <url-pattern>/BuyNow</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

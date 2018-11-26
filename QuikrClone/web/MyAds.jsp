@@ -50,6 +50,7 @@
                 String cat=rs.getString("category");
                 String item=rs.getString("itemType");
                 int p=rs.getInt("price");
+                int itemno=rs.getInt("itemNumber");
                 String ds=rs.getString("description");
                 String date=rs.getString("date");
                 if(name.equals(n))
@@ -59,9 +60,10 @@
                     out.println("<tr><td>Posted On</td>");
                     out.println("<td>Category</td>");
                     out.println("<td>Item Type</td>");
+                    out.println("<td>Item Number</td>");
                     out.println("<td>Price</td>");
                     out.println("<td>Description</td>");
-                    out.println("<tr><td>"+date+"</td><td>"+cat+"</td><td>"+item+"</td><td>"+p+"</td><td>"+ds+"</td></tr>");
+                    out.println("<tr><td>"+date+"</td><td>"+cat+"</td><td>"+item+"</td><td>"+itemno+"</td><td>"+p+"</td><td>"+ds+"</td></tr>");
                     out.println("</table></center><br>");
                 }
             }
@@ -88,27 +90,10 @@ td {
 tr:nth-child(odd){background-color: lightgreen;}
 tr:nth-child(even){background-color: lightblue;}
 
-.input[type=submit] {
-    width: 10%;
-    background-color: white;
-    color: #0B5345;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: 2px solid #0B5345;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.input[type=submit]:hover {
-    background-color: #0B5345;
-    color: white;
-    font-weight: bold;
-}
-
 </style>
         <title>My Ads</title>
     </head>
-    <body style="font-family:verdana">
+    <body style="font-family:verdana" bgcolor="#F2F4F4">
     </body>
 </html>
 <%@include file="Footer.jsp" %>

@@ -14,7 +14,7 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -24,60 +24,56 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
     width: 7%;
-    background-color: white;
-    color: #0B5345;
+    background-color: #2E86C1;
+    color:white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-    background-color:#0B5345;
+    background-color:#2E86C1;
     color:white;
-    font-weight: bold;
-    border: 1px solid white; 
+    border: none;
+    font-weight: bold; 
 }
 
 .input[type=text]:focus 
 {
-      background-color: lightcyan;
-      color: black;
+      border: 1px solid #2E86C1;
 }
 .input[type=password]:focus 
 {
-      background-color:lightcyan;
-      color:black;
+      border: 1px solid #2E86C1; 
 }
 .input1{
-    background-color: white;
-    color: #0B5345;
+    background-color:#2ECC71;
+    color: white;
     text-decoration: none;
     padding: 10px 16px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input1:hover {
-    background-color:#0B5345;
     color:white;
     font-weight: bold;
-    border: 1px solid white; 
 }
 </style>
         <title>Login</title>
     </head>
-    <body style="font-family:verdana; display: inline;">
+    <body bgcolor="#F2F4F4" style="font-family:verdana; display: inline;">
         <%            
             session.setAttribute("login",121);
         %>

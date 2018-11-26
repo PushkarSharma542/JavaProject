@@ -16,8 +16,8 @@ body{
             </style>
     </head>
     <body>
-        <hr color="#0B5345">
-        <img src="images/Logo.png" class="ia"><br>
+        <hr>
+         <img style="margin-left:5px" src="images/Logo.jpg" height="70" width="150"><br>
         <h5 style="margin-top: 5px;margin-left: 15px">
         Quikr India Pvt Ltd,<br>
         Block B, Mohan Cooperative Industrial Estate,<br> Badarpur, New Delhi, Delhi - 110076<br>

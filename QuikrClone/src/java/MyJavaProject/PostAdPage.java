@@ -59,12 +59,12 @@ public class PostAdPage extends HttpServlet {
         String date=GetDate.getDate();
         String fname = null;
         String lname = null;
+        HttpSession session=req.getSession();
+        String cUser=(String)session.getAttribute("username");
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(url,u,p);
-            HttpSession session=req.getSession();
-            String cUser=(String)session.getAttribute("username");
             String query1="select * from userdetails where username='"+cUser+"'";
             Statement st=con.createStatement();
             Statement st1=con.createStatement();
@@ -79,7 +79,8 @@ public class PostAdPage extends HttpServlet {
                 }
             }
             String name=fname+lname;
-            String query="insert into postad values('"+Cat+"','"+select+"','"+name+"','"+price+"','"+desc+"','"+date+"')";
+            int itemno=GetRandomNumber.RandomNumFunc();
+            String query="insert into postad values('"+Cat+"','"+itemno+"','"+select+"','"+cUser+"','"+name+"','"+price+"','"+desc+"','"+date+"')";
             int r=st.executeUpdate(query);
             res.sendRedirect("Home.jsp");
         }

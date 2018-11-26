@@ -13,7 +13,7 @@
 <%@include file="Header.jsp"%>
 <html>
     <title>Home</title>
-    <body><br>
+    <body bgcolor="#F2F4F4"><br>
     <center><h6>*All recent ads will show here</h6></center>
 <%
         Class.forName("com.mysql.jdbc.Driver");
@@ -21,9 +21,9 @@
         Statement s=con.createStatement();
         ResultSet r=s.executeQuery("select * from postad order by date DESC");
         while(r.next())
-        {
-            System.out.println(LocalDateTime.now());
+        {            
             String user=r.getString("sellerName");
+            int itemno=r.getInt("itemNumber");
             String cat=r.getString("category");
             String subCat=r.getString("itemType");
             String price=r.getString("price");
@@ -32,6 +32,7 @@
             out.println("<center><img src='images/default.gif'>");
             out.print("<div><form style='font-family: arial'><table>");
             out.print("<tr><td>"+"Posted on  : "+Date+"</td></tr>");
+            out.print("<tr><td>"+"Item Number : "+itemno+"</td></tr>");
             out.print("<tr><td>"+"Item category : "+cat+"</td></tr>");
             out.print("<tr><td>"+"Item type : "+subCat+"</td></tr>");
             out.println("<tr><td>"+"Seller name : "+user+"</td></tr>");

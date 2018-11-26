@@ -35,49 +35,32 @@ function validateForm() {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #0B5345;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.input[type=password], select {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #0B5345;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .input[type=submit] {
     width: 7%;
-    background-color: white;
-    color: #0B5345;
+    background-color: #2E86C1;
+    color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 2px solid #0B5345;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .input[type=submit]:hover {
-       background-color:#0B5345;
-    color:white;
-    font-weight: bold;
-    border: 1px solid white; 
+    font-weight: bold; 
 }
 
 .input[type=text]:focus 
 {
-      background-color: lightcyan;
-      color: black;
+      background-color:white;
+      border: 1px solid #2E86C1;
 }
-.input[type=password]:focus 
-{
-      background-color:lightcyan;
-      color:black;
-}
+
 .select
 {
       background-color:white;
@@ -85,14 +68,27 @@ function validateForm() {
 }
 
 .select:hover {
-    background-color:#0B5345;
-    color:white;
+    background-color:#2E86C1;
+      color: white;
+}
+.input1{
+    background-color:#2ECC71;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    margin: 8px 0;
+    border:none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
+.input1:hover {
+    font-weight: bold;
+}
 </style>
         <title>Security Questions</title>
     </head>
-    <body style="font-family:verdana">
+    <body style="font-family:verdana" bgcolor="#F2F4F4">
         <%
             if(session.getAttribute("username")==null && session.getAttribute("login")!=null){
                 session.setAttribute("fpwd",1234);
@@ -109,7 +105,7 @@ function validateForm() {
                 out.println("</select><br>");
                 out.println("<input type='text' name='ans' placeholder='Your Answer' class='input' required><br><br>");
                 out.println("<input type='submit' name='Login' value='Submit' class='input'><br>");
-                out.println("</form><br></center>");
+                out.println("</form><br><a href='Home.jsp' class='input1'>Cancel</a><br><br></center>");
             }
             else if(session.getAttribute("myprofile")!=null)
             {
