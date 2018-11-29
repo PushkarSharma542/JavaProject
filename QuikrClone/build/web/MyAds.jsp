@@ -66,6 +66,8 @@
                     out.println("<tr><td>"+date+"</td><td>"+cat+"</td><td>"+item+"</td><td>"+itemno+"</td><td>"+p+"</td><td>"+ds+"</td></tr>");
                     out.println("</table></center><br>");
                 }
+                out.println("<center><form action='DeleteAd' method='post'><input type='number' name='inum' value='inum' placeholder='Enter the Item number' class='in'><br><br>");
+                out.println("<input type='submit' class='del' value='Delete Ad'></form></center>");
             }
             if(flag==1)
             {
@@ -90,6 +92,24 @@ td {
 tr:nth-child(odd){background-color: lightgreen;}
 tr:nth-child(even){background-color: lightblue;}
 
+.del{
+    background-color: #F4E60A;
+    border:1px solid #F1C40F;
+    color:black;
+    padding: 10px 20px;
+}
+.in{
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.in:focus{
+    border: 1px solid #2E86C1;
+}
 </style>
         <title>My Ads</title>
     </head>

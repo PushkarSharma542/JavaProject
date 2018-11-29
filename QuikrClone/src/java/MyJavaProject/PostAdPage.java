@@ -43,13 +43,17 @@ public class PostAdPage extends HttpServlet {
         {
             Cat="Electronics";
         }
-        else if(select.equals("school book") | select.equals("college book") | select.equals("stationary item"))
+        else if(select.equals("school book") | select.equals("college book") | select.equals("other book"))
         {
             Cat="Education";
         }
         else if(select.equals("car") | select.equals("bike") | select.equals("bicycle"))
         {
             Cat="Automobiles";
+        }
+        else if(select.equals("plot") | select.equals("shop") | select.equals("house") | select.equals("flat"))
+        {
+            Cat="Real Estate";
         }
         String price=req.getParameter("price");
         String desc=req.getParameter("description");

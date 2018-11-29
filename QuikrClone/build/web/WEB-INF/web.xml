@@ -32,6 +32,10 @@
         <servlet-name>BuyNow</servlet-name>
         <servlet-class>MyJavaProject.BuyNow</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteAd</servlet-name>
+        <servlet-class>MyJavaProject.DeleteAd</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginPage</servlet-name>
         <url-pattern>/LoginPage</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>BuyNow</servlet-name>
         <url-pattern>/BuyNow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAd</servlet-name>
+        <url-pattern>/DeleteAd</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

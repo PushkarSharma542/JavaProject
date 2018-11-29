@@ -79,11 +79,16 @@ h6{
                     <optgroup label="Education" class="select">
                     <option name="education" value="school book" class="select">School Books</option>
                     <option name="education" value="college book" class="select">College Books</option>
-                    <option name="education" value="stationary item" class="select">Stationary Items</option>
+                    <option name="education" value="other book" class="select">Other Books</option>
                     <optgroup label="Automobiles" class="select">
                     <option name="Automobiles" value="car" class="select">Cars</option>
                     <option name="Automobiles" value="bike" class="select">Bikes</option>
                     <option name="Automobiles" value="bicycle" class="select">Bicycles</option>
+                    <optgroup label="Real Estate" class="select">
+                    <option name="Automobiles" value="flat" class="select">Flats</option>
+                    <option name="Automobiles" value="house" class="select">Houses</option>
+                    <option name="Automobiles" value="shop" class="select">Shops</option>
+                    <option name="Automobiles" value="plot" class="select">Plots</option>
                     </select><br><br>
                     <input type="number" name="price" Placeholder="Set Price (in Rupees)" class="input" required><br><br>
                     <textarea rows="3" cols="45" placeholder="Add Description of your item" maxlength="50" class="input" name="description" required></textarea>

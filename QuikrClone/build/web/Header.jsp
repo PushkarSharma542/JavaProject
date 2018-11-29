@@ -73,6 +73,7 @@
     border:none;
     background-color: #2E86C1;
     margin-right: 10px;
+    margin-top: 20px;
     color: white;
     width: 100px;
     margin-top: 4px;
@@ -85,7 +86,6 @@
 
 .postadd:hover
 {
-    color:white;
     font-weight: bold;
 }
 .right{
@@ -111,10 +111,11 @@ h4{
    font-family: Rockwell-Condensed;
    cursor: pointer;
 }
+
 </style>
 </head>
 <body style="font-family:verdana">
-    <a href="Cart.jsp"><img src="images/cart.png" height="35" width="35" style="float:right;margin-top: 5px;margin-right: 5px;margin-left:7px"></a>
+<div class="navbar">
     <%
             if(session.getAttribute("username")==null)
             {
@@ -134,7 +135,6 @@ h4{
             }
         %>
         <br><br><br>
-<div class="navbar">
     <img style="margin-left:5px" src="images/Logo.jpg" height="70" width="150" class="logo">
     <a href="Home.jsp">Home</a>
     <div class="dropdown">
@@ -158,6 +158,7 @@ h4{
     <div class="right">
         <a href="SignUp.jsp" >Register</a>
         <a href="PostAd.jsp" class="postadd1">Post Free Ad</a>
+        <a href="Cart.jsp"><img src="images/cart.png" height="35" width="35" style="margin-top: -10px;margin-left: -15px;"></a>
     </div>
 </div>
     <hr>

@@ -69,7 +69,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("   <style>\n");
       out.write(".navbar {\n");
       out.write("    overflow: hidden;\n");
-      out.write("    background-color:#0B5345;\n");
+      out.write("    background-color:white;\n");
       out.write("    font-family: verdana;\n");
       out.write("    border-radius: 4px;\n");
       out.write("}\n");
@@ -77,7 +77,8 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(".navbar a {\n");
       out.write("    float: left;\n");
       out.write("    font-size: 16px;\n");
-      out.write("    color: white;\n");
+      out.write("    color: black;\n");
+      out.write("    margin-top: 10px;\n");
       out.write("    text-align: center;\n");
       out.write("    padding: 14px 16px;\n");
       out.write("    text-decoration: none;\n");
@@ -86,13 +87,14 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(".dropdown {\n");
       out.write("    float: left;\n");
       out.write("    overflow: hidden;\n");
+      out.write("    margin-top: 10px;\n");
       out.write("}\n");
       out.write("\n");
       out.write(".dropbtn {\n");
       out.write("    font-size: 16px;    \n");
       out.write("    border: none;\n");
       out.write("    outline: none;\n");
-      out.write("    color: white;\n");
+      out.write("    color: black;\n");
       out.write("    padding: 14px 16px;\n");
       out.write("    background-color: inherit;\n");
       out.write("    font-family: verdana;\n");
@@ -118,7 +120,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\n");
       out.write("\n");
       out.write(".dropdown-content a:hover {\n");
-      out.write("    background-color: #0B5345;\n");
+      out.write("    background-color: #2E86C1;\n");
       out.write("    color:white;\n");
       out.write("}\n");
       out.write("\n");
@@ -127,11 +129,13 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\n");
       out.write("\n");
       out.write(".postadd{\n");
-      out.write("    border: 2px solid #0B5345;\n");
-      out.write("    background-color: white;\n");
+      out.write("    border:none;\n");
+      out.write("    background-color: #2E86C1;\n");
       out.write("    margin-right: 10px;\n");
-      out.write("    color: darkgreen;\n");
+      out.write("    margin-top: 20px;\n");
+      out.write("    color: white;\n");
       out.write("    width: 100px;\n");
+      out.write("    margin-top: 4px;\n");
       out.write("    height:40px;\n");
       out.write("   float: right;\n");
       out.write("   border-radius:10px;\n");
@@ -141,61 +145,67 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write(".postadd:hover\n");
       out.write("{\n");
-      out.write("    background-color:#0B5345;\n");
-      out.write("    color:white;\n");
       out.write("    font-weight: bold;\n");
       out.write("}\n");
       out.write(".right{\n");
       out.write("    float: right;\n");
       out.write("}\n");
       out.write("h4{\n");
-      out.write("    float: right;\n");
-      out.write("    margin-right: 8px;\n");
-      out.write("    margin-top: 28px;\n");
+      out.write("    float: right;   \n");
+      out.write("    margin-top: 12px;\n");
+      out.write("    margin-right: 10px;\n");
+      out.write("    color:#2E86C1;\n");
+      out.write("    font-family: Gill Sans MT;\n");
+      out.write("}\n");
+      out.write(".logo{\n");
+      out.write("    float:left;\n");
+      out.write("}\n");
+      out.write(".postadd1{\n");
+      out.write("    border:1px solid #F1C40F;\n");
+      out.write("    background-color: #F4E60A;\n");
+      out.write("    margin-right: 10px;\n");
+      out.write("    color: white;\n");
+      out.write("    width: 85px;\n");
+      out.write("    height:15px;\n");
+      out.write("   font-family: Rockwell-Condensed;\n");
+      out.write("   cursor: pointer;\n");
       out.write("}\n");
       out.write("\n");
       out.write("</style>\n");
       out.write("</head>\n");
       out.write("<body style=\"font-family:verdana\">\n");
-      out.write("    <div>\n");
-      out.write("        <a href=\"Cart.jsp\"><img src=\"images/mycart.png\" height=\"50\" width=\"50\" style=\"float:right; margin-right:5px;margin-left:4px; margin-top:12px\"></a>\n");
-      out.write("        ");
+      out.write("<div class=\"navbar\">\n");
+      out.write("    ");
 
             if(session.getAttribute("username")==null)
             {
                 out.println("<form action='Login.jsp' method='post' class='right'>");
                 String u="Guest";
-                pageContext.setAttribute("username",u);
-            out.println("<br><input type='submit' value='Login' class='postadd'><i class='fa fa-sort-down'></i>");
-        out.println("</form>");
+            out.println("<input type='submit' value='Login' class='postadd'><i class='fa fa-sort-down'></i>");
+        out.println("</form>");  
+        out.println("<h4>Welcome "+u+"</h4>");
             }
             else
             {
                 out.println("<form action='LogoutPage' method='post' class='right'>");
-                String user=(String)session.getAttribute("username");
                 String u=(String)session.getAttribute("username");
-                pageContext.setAttribute("username",u);
-            out.println("<br><input type='submit' value='Logout' class='postadd'>");
+            out.println("<input type='submit' value='Logout' class='postadd'>");
         out.println("</form>");
+        out.println("<h4>Welcome "+u+"</h4>");
             }
         
       out.write("\n");
+      out.write("        <br><br><br>\n");
+      out.write("    <img style=\"margin-left:5px\" src=\"images/Logo.jpg\" height=\"70\" width=\"150\" class=\"logo\">\n");
+      out.write("    <a href=\"Home.jsp\">Home</a>\n");
+      out.write("    <div class=\"dropdown\">\n");
+      out.write("        <button class=\"dropbtn\">Categories</button>\n");
+      out.write("        <div class=\"dropdown-content\">\n");
+      out.write("            <a href=\"Electronics.jsp\">Electronics</a>\n");
+      out.write("            <a href=\"Education.jsp\">Education</a>\n");
+      out.write("                <a href=\"Automobiles.jsp\">Automobiles</a>\n");
+      out.write("        </div>\n");
       out.write("    </div>\n");
-      out.write("    <h4 style=\"color: #0B5345\">");
-out.println("Welcome ");out.print(pageContext.findAttribute("username"));
-      out.write("</h4>\n");
-      out.write("    <img src=\"images/Logo.png\"><br>\n");
-      out.write("<div class=\"navbar\">\n");
-      out.write("  <a href=\"Home.jsp\">Home</a>\n");
-      out.write("  <div class=\"dropdown\">\n");
-      out.write("    <button class=\"dropbtn\">Categories\n");
-      out.write("    </button>\n");
-      out.write("    <div class=\"dropdown-content\">\n");
-      out.write("      <a href=\"Electronics.jsp\">Electronics</a>\n");
-      out.write("      <a href=\"Education.jsp\">Education</a>\n");
-      out.write("      <a href=\"Automobiles.jsp\">Automobiles</a>\n");
-      out.write("    </div>\n");
-      out.write("  </div>\n");
       out.write("    <a href=\"About.jsp\">About</a>\n");
       out.write("    ");
 
@@ -208,19 +218,20 @@ out.println("Welcome ");out.print(pageContext.findAttribute("username"));
         }
     
       out.write("\n");
-      out.write("  <div class=\"right\">\n");
-      out.write("      <a href=\"PostAd.jsp\">Post Free Ad</a>\n");
-      out.write("      <a href=\"SignUp.jsp\" >Register\n");
-      out.write("      </a>\n");
-      out.write("  </div>\n");
+      out.write("    <div class=\"right\">\n");
+      out.write("        <a href=\"SignUp.jsp\" >Register</a>\n");
+      out.write("        <a href=\"PostAd.jsp\" class=\"postadd1\">Post Free Ad</a>\n");
+      out.write("        <a href=\"Cart.jsp\"><img src=\"images/cart.png\" height=\"35\" width=\"35\" style=\"margin-top: -10px;margin-left: -15px;\"></a>\n");
+      out.write("    </div>\n");
       out.write("</div>\n");
-      out.write("   <hr color=\"#0B5345\"> \n");
+      out.write("    <hr>\n");
       out.write("</body>\n");
       out.write("</html>\n");
       out.write("\n");
-      out.write("<html>\n");
+      out.write("<html><head>\n");
       out.write("    <title>Home</title>\n");
-      out.write("    <body><br>\n");
+      out.write("    </head>\n");
+      out.write("    <body bgcolor=\"#F2F4F4\"><br>\n");
       out.write("    <center><h6>*All recent ads will show here</h6></center>\n");
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -228,9 +239,9 @@ out.println("Welcome ");out.print(pageContext.findAttribute("username"));
         Statement s=con.createStatement();
         ResultSet r=s.executeQuery("select * from postad order by date DESC");
         while(r.next())
-        {
-            System.out.println(LocalDateTime.now());
+        {            
             String user=r.getString("sellerName");
+            int itemno=r.getInt("itemNumber");
             String cat=r.getString("category");
             String subCat=r.getString("itemType");
             String price=r.getString("price");
@@ -239,6 +250,7 @@ out.println("Welcome ");out.print(pageContext.findAttribute("username"));
             out.println("<center><img src='images/default.gif'>");
             out.print("<div><form style='font-family: arial'><table>");
             out.print("<tr><td>"+"Posted on  : "+Date+"</td></tr>");
+            out.print("<tr><td>"+"Item Number : "+itemno+"</td></tr>");
             out.print("<tr><td>"+"Item category : "+cat+"</td></tr>");
             out.print("<tr><td>"+"Item type : "+subCat+"</td></tr>");
             out.println("<tr><td>"+"Seller name : "+user+"</td></tr>");
@@ -266,8 +278,8 @@ out.println("Welcome ");out.print(pageContext.findAttribute("username"));
       out.write("            </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <hr color=\"#0B5345\">\n");
-      out.write("        <img src=\"images/Logo.png\" class=\"ia\"><br>\n");
+      out.write("        <hr>\n");
+      out.write("         <img style=\"margin-left:5px\" src=\"images/Logo.jpg\" height=\"70\" width=\"150\"><br>\n");
       out.write("        <h5 style=\"margin-top: 5px;margin-left: 15px\">\n");
       out.write("        Quikr India Pvt Ltd,<br>\n");
       out.write("        Block B, Mohan Cooperative Industrial Estate,<br> Badarpur, New Delhi, Delhi - 110076<br>\n");

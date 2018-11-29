@@ -11,8 +11,9 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@include file="Header.jsp"%>
-<html>
+<html><head>
     <title>Home</title>
+    </head>
     <body bgcolor="#F2F4F4"><br>
     <center><h6>*All recent ads will show here</h6></center>
 <%
